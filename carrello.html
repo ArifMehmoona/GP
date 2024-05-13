@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carrello</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 20px auto;
+      padding: 0 15px;
+    }
+    #carrello {
+      margin-top: 20px;
+    }
+    .card {
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+    .card h2 {
+      margin-top: 0;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="/index">Home</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/bestseller">Bestseller</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/carrello">Carrello</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/cd">Cd</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/vinili">Vinili</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/contatti">Contatti</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container mt-3">
+    <h1>Il tuo carrello</h1>
+    <div id="carrello">
+      <!-- Qui verranno visualizzati i prodotti nel carrello -->
+    </div>
+    <button class="btn btn-danger" onclick="svuotaCarrello()">Svuota carrello</button>
+  </div>
+
+  <script>
+    // Funzione per ottenere i dati del carrello dal localStorage
+    function getCartData() {
+      return JSON.parse(localStorage.getItem('carrello')) || [];
+    }
+
+    // Funzione per visualizzare i prodotti nel carrello
+    function displayCart() {
+      var cart = getCartData();
+      var carrelloDiv = document.getElementById('carrello');
+      // Svuota il contenuto del div del carrello
+      carrelloDiv.innerHTML = '';
+      // Aggiungi i prodotti al carrello
+      cart.forEach(function(cdString) {
+        var cd = JSON.parse(cdString);
+        var cardDiv = document.createElement('div');
+        cardDiv.className = 'card mb-2';
+        cardDiv.innerHTML = `
+          <div class="card-body">
+            <p class="card-text">Disco: ${cd.disco}</p>
+            <p class="card-text">Anno: ${cd.anno}</p>
+            <p class="card-text">Album: ${cd.album}</p>
+            <p class="card-text">Artista: ${cd.artista}</p>
+            <p class="card-text">Genere: ${cd.genere}</p>
+            <p class="card-text">Prezzo: $${cd.prezzo}</p>
+          </div>
+        `;
+        carrelloDiv.appendChild(cardDiv);
+      });
+    }
+
+    // Funzione per svuotare il carrello
+    function svuotaCarrello() {
+      localStorage.removeItem('carrello');
+      displayCart(); // Aggiorna la visualizzazione del carrello dopo averlo svuotato
+    }
+
+    // Chiama displayCart() all'avvio per visualizzare il carrello corrente
+    displayCart();
+  </script>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

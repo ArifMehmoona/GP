@@ -2,6 +2,8 @@ const express = require('express');
 const path = require('path');
 const app= express();
 
+app.use(express.static(path.join(__dirname, 'public')));
+
 app.get('/', function(req, res){
     res.sendFile(path.join(__dirname, 'index.html'));
 });
@@ -25,6 +27,17 @@ app.get('/vinili', function(req, res){
 
 app.get('/bestseller', function(req, res){
     res.sendFile(path.join(__dirname, 'bestseller.html'));
+});
+
+app.get('/contatti', function(req, res){
+    res.sendFile(path.join(__dirname, 'contatti.html'));
+});
+
+
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
 
