@@ -30,24 +30,40 @@
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
       padding: 20px;
       margin-bottom: 20px;
+      display: inline-block;
+      vertical-align: top;
+      width: calc(33.33% - 20px); /* Larghezza del 33.33% con spazio tra le carte */
+      margin-right: 20px; /* Spazio tra le carte */
+      box-sizing: border-box; /* Calcola la larghezza includendo il padding e il bordo */
+    }
+    .card:nth-child(3n) {
+      margin-right: 0; /* Rimuove il margine destro dalla terza carta in ogni riga */
     }
     .card h2 {
       margin-top: 0;
+    }
+    hr {
+      margin: 0 0 20px;
     }
   </style>
 </head>
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
-      <a class="navbar-brand" href="/index">Home</a>
+      <div>
+        <h2>Music Shop</h2>
+      </div>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
           
-            
+      
           
+          <li class="nav-item">
+            <a class="nav-link" href="/">Home</a>
+          </li>
           <li class="nav-item">
             <a class="nav-link" href="/bestseller">Bestseller</a>
           </li>
@@ -74,7 +90,7 @@
     <div class="container">
       <div class="card">
         <h2>New Releases</h2>
-        <p>Dai un'occhiata agli ultimi vinili e bambini in negozio!</p>
+        <p>Dai un'occhiata agli ultimi vinili e CD in negozio!</p>
       </div>
       <div class="card">
         <h2>Best Sellers</h2>

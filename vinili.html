@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vinili</title>
+  <title>Home</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <style>
     body {
@@ -11,6 +11,13 @@
       margin: 0;
       padding: 0;
       background-color: #f4f4f4;
+    }
+    nav {
+      background-color: #333;
+      color: #fff;
+    }
+    .navbar-brand, .nav-link {
+      color: #fff !important;
     }
     .container {
       max-width: 1200px;
@@ -23,24 +30,44 @@
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
       padding: 20px;
       margin-bottom: 20px;
+      display: inline-block;
+      vertical-align: top;
+      width: calc(33.33% - 20px); /* Larghezza del 33.33% con spazio tra le carte */
+      margin-right: 20px; /* Spazio tra le carte */
+      box-sizing: border-box; /* Calcola la larghezza includendo il padding e il bordo */
+    }
+    .card:nth-child(3n) {
+      margin-right: 0; /* Rimuove il margine destro dalla terza carta in ogni riga */
     }
     .card h2 {
       margin-top: 0;
+    }
+    hr {
+      margin: 0 0 20px;
     }
   </style>
 </head>
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
-      <a class="navbar-brand" href="/index">Home</a>
+      <div>
+        <h2>Music Shop</h2>
+      </div>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
+          
+      
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/">Home</a>
+          </li>
           <li class="nav-item">
             <a class="nav-link" href="/bestseller">Bestseller</a>
           </li>
+
           <li class="nav-item">
             <a class="nav-link" href="/carrello">Carrello</a>
           </li>
@@ -51,8 +78,9 @@
             <a class="nav-link" href="/vinili">Vinili</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/contatti">Contatti</a>
+            <a class="nav-link" href="/contatti">contatti</a>
           </li>
+          
         </ul>
       </div>
     </div>
@@ -60,13 +88,30 @@
 
   <div class="container mt-3">
     <h1 style="color: #000000">Vinili</h1>
+    
     <div class="card">
       <div class="card-body">
-        <p class="card-text">Disco: Vinile</p>
+        <p class="card-text">Tipo: Vinile</p>
         <p class="card-text">Anno: 1990</p>
-        <p class="card-text">Album: Please Hammer, Don't Hurt 'Em</p>
+        <p class="card-text">Album: album</p>
         <p class="card-text">Artista: MC Hammer</p>
         <p class="card-text">Genere: Hip Hop</p>
+        <p class="card-text">Prezzo: 12</p>
+        <p class="card-text">Copertina</p>
+        <img src="https://i.discogs.com/azo0NYRC1UIlI4V8shpEQezXSpRC3ig-WMrGtZ8RwLg/rs:fit/g:sm/q:90/h:590/w:600/czM6Ly9kaXNjb2dzLWRhdGFiYXNlLWltYWdlcy9SLTcyMjkxODQtMTQzOTEzNDY4OS03NTkyLmpwZWc.jpeg" width="250" length="300">
+        <button class="btn btn-primary" onclick="aggiungiAlCarrello(1990, 'Please Hammer, Don\'t Hurt \'Em', 'MC Hammer', 'Hip Hop', 'Vinile', 25)">Aggiungi al carrello</button>
+      </div>
+    </div>
+
+
+    <div class="card">
+      <div class="card-body">
+        <p class="card-text">Tipo: Vinile</p>
+        <p class="card-text">Anno: 1990</p>
+        <p class="card-text">Singolo: singolo</p>
+        <p class="card-text">Artista: MC Hammer</p>
+        <p class="card-text">Genere: Hip Hop</p>
+        <p class="card-text">Prezzo: 12</p>
         <p class="card-text">Copertina</p>
         <img src="https://i.discogs.com/azo0NYRC1UIlI4V8shpEQezXSpRC3ig-WMrGtZ8RwLg/rs:fit/g:sm/q:90/h:590/w:600/czM6Ly9kaXNjb2dzLWRhdGFiYXNlLWltYWdlcy9SLTcyMjkxODQtMTQzOTEzNDY4OS03NTkyLmpwZWc.jpeg" width="250" length="300">
         <button class="btn btn-primary" onclick="aggiungiAlCarrello(1990, 'Please Hammer, Don\'t Hurt \'Em', 'MC Hammer', 'Hip Hop', 'Vinile', 25)">Aggiungi al carrello</button>
@@ -75,13 +120,13 @@
   </div>
 
   <script>
-    function aggiungiAlCarrello(anno, album, artista, genere, disco, prezzo) {
+    function aggiungiAlCarrello(tipo, anno, album, singolo, artista, genere, prezzo) {
       var vinili = {
+        tipo: tipo,
         anno: anno,
         album: album,
         artista: artista,
         genere: genere,
-        disco: disco,
         prezzo: prezzo
       };
 
@@ -90,7 +135,7 @@
       var carrelloArray = carrello ? JSON.parse(carrello) : [];
       carrelloArray.push(viniliString);
       localStorage.setItem('carrello', JSON.stringify(carrelloArray));
-      window.location.href = "/carrello.html";
+      window.location.href = "/carrello";
     }
   </script>
 
