@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home</title>
+  <title>Home🏡</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <style>
     body {
@@ -62,23 +62,23 @@
       
           
           <li class="nav-item">
-            <a class="nav-link" href="/">Home</a>
+            <a class="nav-link" href="/">HOME🏡</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/bestseller">Bestseller</a>
+            <a class="nav-link" href="/bestseller">BESTSELLER⭐</a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="/carrello">Carrello</a>
+            <a class="nav-link" href="/carrello">CARRELLO🛒</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/cd">Cd</a>
+            <a class="nav-link" href="/cd">CD💿</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/vinili">Vinili</a>
+            <a class="nav-link" href="/vinili">VINILI💜</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/contatti">contatti</a>
+            <a class="nav-link" href="/contatti">CONTATTI📱</a>
           </li>
           
         </ul>
@@ -86,22 +86,57 @@
     </div>
   </nav>
 
-  <section>
+
+  
+  <style>
+    .carousel-item img {
+      max-height: 600px; /* Imposta l'altezza massima delle immagini */
+      width: auto; /* Per mantenere proporzioni */
+      margin: 0 auto; /* Per centrare le immagini */
+      .carousel-caption {
+        color: white;
+      }
+    }
+  </style>
+  
+  <section class="section">
     <div class="container">
-      <div class="card">
-        <h2>New Releases</h2>
-        <p>Dai un'occhiata agli ultimi vinili e bambini in negozio!</p>
-      </div>
-      <div class="card">
-        <h2>Best Sellers</h2>
-        <p>Scopri i nostri CD e Vinili più venduti!</p>
-      </div>
-      <div class="card">
-        <h2>Special Offers</h2>
-        <p>Approfitta dei nostri sconti e promozioni speciali!</p>
+      <div id="carouselExampleControls1" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="https://recensiamomusica.com/wp-content/uploads/2024/02/kid-yugi.webp" alt="Immagine 1" class="d-block w-100">
+            <div class="carousel-caption">
+              <h2 class="section-title">Nuove Uscite</h2>
+              <p class="section-description">Esplora gli ultimi vinili e CD nel nostro negozio!</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="https://hips.hearstapps.com/hmg-prod/images/tedua-ladivinacommedia-cover-6478c5884f1d8.jpg?crop=1xw:0.75xh;center,top&resize=1200:*" alt="Immagine 2" class="d-block w-100">
+            <div class="carousel-caption">
+              <h2 class="section-title">I Più Venduti</h2>
+              <p class="section-description">Scopri i nostri CD e vinili più venduti!</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="https://m.media-amazon.com/images/I/615yySOqheL._UF1000,1000_QL80_.jpg" alt="Immagine 3" class="d-block w-100">
+            <div class="carousel-caption">
+              <h2 class="section-title">Offerte Speciali</h2>
+              <p class="section-description">Approfitta delle nostre promozioni speciali e sconti!</p>
+            </div>
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleControls1" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleControls1" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
       </div>
     </div>
   </section>
+  
 
   <footer class="footer">
     

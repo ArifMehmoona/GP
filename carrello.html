@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Carrello</title>
+  <title>Carrello🛒</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <style>
     body {
@@ -12,13 +12,17 @@
       padding: 0;
       background-color: #f4f4f4;
     }
+    nav {
+      background-color: #333;
+      color: #fff;
+    }
+    .navbar-brand, .nav-link {
+      color: #fff !important;
+    }
     .container {
       max-width: 1200px;
       margin: 20px auto;
       padding: 0 15px;
-    }
-    #carrello {
-      margin-top: 20px;
     }
     .card {
       background-color: #fff;
@@ -26,36 +30,60 @@
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
       padding: 20px;
       margin-bottom: 20px;
+      display: inline-block;
+      vertical-align: top;
+      width: calc(33.33% - 20px); /* Larghezza del 33.33% con spazio tra le carte */
+      margin-right: 20px; /* Spazio tra le carte */
+      box-sizing: border-box; /* Calcola la larghezza includendo il padding e il bordo */
+    }
+    .card:nth-child(3n) {
+      margin-right: 0; /* Rimuove il margine destro dalla terza carta in ogni riga */
     }
     .card h2 {
       margin-top: 0;
     }
+    hr {
+      margin: 0 0 20px;
+    }
   </style>
 </head>
 <body>
+
+
+
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
-      <a class="navbar-brand" href="/index">Home</a>
+      <div>
+        <h2>Music Shop</h2>
+      </div>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
+          
+      
+          
           <li class="nav-item">
-            <a class="nav-link" href="/bestseller">Bestseller</a>
+            <a class="nav-link" href="/">HOME🏡</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/carrello">Carrello</a>
+            <a class="nav-link" href="/bestseller">BESTSELLER⭐</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="/carrello">CARRELLO🛒</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/cd">Cd</a>
+            <a class="nav-link" href="/cd">CD💿</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/vinili">Vinili</a>
+            <a class="nav-link" href="/vinili">VINILI💜</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/contatti">Contatti</a>
+            <a class="nav-link" href="/contatti">CONTATTI📱</a>
           </li>
+          
         </ul>
       </div>
     </div>
@@ -77,28 +105,31 @@
 
     // Funzione per visualizzare i prodotti nel carrello
     function displayCart() {
-      var cart = getCartData();
-      var carrelloDiv = document.getElementById('carrello');
-      // Svuota il contenuto del div del carrello
-      carrelloDiv.innerHTML = '';
-      // Aggiungi i prodotti al carrello
-      cart.forEach(function(cdString) {
-        var cd = JSON.parse(cdString);
-        var cardDiv = document.createElement('div');
-        cardDiv.className = 'card mb-2';
-        cardDiv.innerHTML = `
-          <div class="card-body">
-            <p class="card-text">Disco: ${cd.disco}</p>
-            <p class="card-text">Anno: ${cd.anno}</p>
-            <p class="card-text">Album: ${cd.album}</p>
-            <p class="card-text">Artista: ${cd.artista}</p>
-            <p class="card-text">Genere: ${cd.genere}</p>
-            <p class="card-text">Prezzo: $${cd.prezzo}</p>
-          </div>
-        `;
-        carrelloDiv.appendChild(cardDiv);
-      });
-    }
+        var cart = getCartData();
+        var carrelloDiv = document.getElementById('carrello');
+        // Svuota il contenuto del div del carrello
+        carrelloDiv.innerHTML = '';
+        // Aggiungi i prodotti al carrello
+        cart.forEach(function(itemString) {
+          var item = JSON.parse(itemString);
+          var cardDiv = document.createElement('div');
+          cardDiv.className = 'card mb-2';
+          cardDiv.innerHTML = `
+            <div class="card-body">
+              <p class="card-text">Tipo: ${item.tipo}</p>
+              <p class="card-text">Anno: ${item.anno}</p>
+              <p class="card-text">Album: ${item.album}</p>
+              <p class="card-text">Brani: ${item.brani}</p>
+              <p class="card-text">Artista: ${item.artista}</p>
+              <p class="card-text">Genere: ${item.genere}</p>
+              <p class="card-text">Prezzo: $${item.prezzo}</p>
+              <p class="card-text">Copertina: <img src="${item.copertina}" alt="Copertina"></p>
+            </div>
+          `;
+          carrelloDiv.appendChild(cardDiv);
+        });
+      }
+
 
     // Funzione per svuotare il carrello
     function svuotaCarrello() {
