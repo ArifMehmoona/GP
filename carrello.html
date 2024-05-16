@@ -113,7 +113,10 @@
         cart.forEach(function(itemString) {
           var item = JSON.parse(itemString);
           var cardDiv = document.createElement('div');
-          cardDiv.className = 'card mb-2';
+          cardDiv.className = 'card mb-2 large-card';
+
+
+
           cardDiv.innerHTML = `
             <div class="card-body">
               <p class="card-text">Tipo: ${item.tipo}</p>
@@ -123,7 +126,8 @@
               <p class="card-text">Artista: ${item.artista}</p>
               <p class="card-text">Genere: ${item.genere}</p>
               <p class="card-text">Prezzo: $${item.prezzo}</p>
-              <p class="card-text">Copertina: <img src="${item.copertina}" alt="Copertina"></p>
+              <p class="card-text">Copertina: <img src="${item.copertina}" alt="Copertina dell'album"></p>
+
             </div>
           `;
           carrelloDiv.appendChild(cardDiv);
