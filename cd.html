@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CD💿</title>
+  <title>BESTSELLER⭐</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <style>
     body {
@@ -16,8 +16,16 @@
       background-color: #333;
       color: #fff;
     }
-    .navbar-brand, .nav-link {
+    .navbar-brand {
       color: #fff !important;
+      margin-right: auto; /* Sposta "Music Shop" tutto a sinistra */
+    }
+    .nav-link {
+      color: #fff !important;
+      margin-left: auto; /* Sposta gli elementi del menu a sinistra */
+    }
+    .navbar .form-inline {
+      justify-content: flex-end; /* Sposta la barra di ricerca a destra */
     }
     .container {
       max-width: 1200px;
@@ -45,29 +53,40 @@
     hr {
       margin: 0 0 20px;
     }
+    .carousel-item img {
+      max-height: 600px; /* Imposta l'altezza massima delle immagini */
+      width: auto; /* Per mantenere proporzioni */
+      margin: 0 auto; /* Per centrare le immagini */
+    }
+    .carousel-caption {
+      color: white;
+    }
+    .footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 10px 0;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
   </style>
 </head>
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
-      <div>
-        <h2>Music Shop</h2>
-      </div>
+      <a class="navbar-brand" href="#">Music Shop</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
-          
-      
-          
           <li class="nav-item">
             <a class="nav-link" href="/">HOME🏡</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/bestseller">BESTSELLER⭐</a>
           </li>
-
           <li class="nav-item">
             <a class="nav-link" href="/carrello">CARRELLO🛒</a>
           </li>
@@ -80,12 +99,15 @@
           <li class="nav-item">
             <a class="nav-link" href="/contatti">CONTATTI📱</a>
           </li>
-          
         </ul>
+        <!-- Barra di ricerca -->
+        <form id="searchForm" class="form-inline my-2 my-lg-0">
+          <input id="searchInput" class="form-control mr-sm-2 ml-auto" type="search" placeholder="Cerca" aria-label="Cerca">
+          <button class="btn btn-outline-success my-2 my-sm-0 mr-2" type="submit">Cerca</button>
+        </form>
       </div>
     </div>
   </nav>
-
 
 
   <div class="container mt-3">
@@ -172,6 +194,947 @@
         <button class="btn btn-primary btn-sm" onclick="aggiungiAlCarrello('Cd', 2023, 'Outro Purgatorio', 'La Divina Commedia', 'Tedua', 'Hip Hop', 5)">Aggiungi al carrello</button>
       </div>
     </div>
+
+
+    <div class="card">
+      <img src="https://i.discogs.com/K3eBJxeoTieENf7dfLkfxIKVzEduG_lpglnDiyD_DNg/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTI4NTcw/NTQ5LTE3MDI5NTc3/NjEtNTQzNC5qcGVn.jpeg" class="card-img-top" alt="Copertina dell'album">
+      <div class="card-body">
+        <h5 class="card-title"><strong>MANCANZE AFFETTIVE</strong></h5>
+        <p class="card-text"><strong>Tipo:</strong> CD</p>
+        <p class="card-text"><strong>Anno:</strong> 2023</p>
+        <p class="card-text"><strong>Artista:</strong> Tedua, Geolier</p>
+        <p class="card-text"><strong>Brano:</strong> Singolo</p>
+        <p class="card-text"><strong>Genere:</strong> Hip Hop</p>
+        <p class="card-text"><strong>Prezzo:</strong> $5</p>
+        <p class="card-text"><strong>Album:</strong> La Divina Commedia</p>
+        <button class="btn btn-primary btn-sm" onclick="aggiungiAlCarrello('Cd', 2023, 'Mancanze Affettive', 'La Divina Commedia', 'Tedua, Geolier', 'Hip Hop', 5)">Aggiungi al carrello</button>
+      </div>
+    </div>
+
+
+    <div class="card">
+      <img src="https://i.discogs.com/K3eBJxeoTieENf7dfLkfxIKVzEduG_lpglnDiyD_DNg/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTI4NTcw/NTQ5LTE3MDI5NTc3/NjEtNTQzNC5qcGVn.jpeg" class="card-img-top" alt="Copertina dell'album">
+      <div class="card-body">
+        <h5 class="card-title"><strong>INTRO LA DIVINA COMMEDIA</strong></h5>
+        <p class="card-text"><strong>Tipo:</strong> CD</p>
+        <p class="card-text"><strong>Anno:</strong> 2023</p>
+        <p class="card-text"><strong>Artista:</strong> Tedua</p>
+        <p class="card-text"><strong>Brano:</strong> Singolo</p>
+        <p class="card-text"><strong>Genere:</strong> Hip Hop</p>
+        <p class="card-text"><strong>Prezzo:</strong> $5</p>
+        <p class="card-text"><strong>Album:</strong> La Divina Commedia</p>
+        <button class="btn btn-primary btn-sm" onclick="aggiungiAlCarrello('Cd', 2023, 'Intro La Divina Commedia', 'La Divina Commedia', 'Tedua', 'Hip Hop', 5)">Aggiungi al carrello</button>
+      </div>
+    </div>
+
+
+    <div class="card">
+      <img src="https://i.discogs.com/K3eBJxeoTieENf7dfLkfxIKVzEduG_lpglnDiyD_DNg/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTI4NTcw/NTQ5LTE3MDI5NTc3/NjEtNTQzNC5qcGVn.jpeg" class="card-img-top" alt="Copertina dell'album">
+      <div class="card-body">
+        <h5 class="card-title"><strong>DILUVIO A LUGLIO</strong></h5>
+        <p class="card-text"><strong>Tipo:</strong> CD</p>
+        <p class="card-text"><strong>Anno:</strong> 2023</p>
+        <p class="card-text"><strong>Artista:</strong> Tedua, Marracash</p>
+        <p class="card-text"><strong>Brano:</strong> Singolo</p>
+        <p class="card-text"><strong>Genere:</strong> Hip Hop</p>
+        <p class="card-text"><strong>Prezzo:</strong> $5</p>
+        <p class="card-text"><strong>Album:</strong> La Divina Commedia</p>
+        <button class="btn btn-primary btn-sm" onclick="aggiungiAlCarrello('Cd', 2023, 'Diluvio a Luglio', 'La Divina Commedia', 'Tedua, Marracash', 'Hip Hop', 5)">Aggiungi al carrello</button>
+      </div>
+    </div>
+
+
+    <div class="card">
+      <img src="https://i.discogs.com/K3eBJxeoTieENf7dfLkfxIKVzEduG_lpglnDiyD_DNg/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTI4NTcw/NTQ5LTE3MDI5NTc3/NjEtNTQzNC5qcGVn.jpeg" class="card-img-top" alt="Copertina dell'album">
+      <div class="card-body">
+        <h5 class="card-title"><strong>VOLGARE</strong></h5>
+        <p class="card-text"><strong>Tipo:</strong> CD</p>
+        <p class="card-text"><strong>Anno:</strong> 2023</p>
+        <p class="card-text"><strong>Artista:</strong> Tedua, Lazza</p>
+        <p class="card-text"><strong>Brano:</strong> Singolo</p>
+        <p class="card-text"><strong>Genere:</strong> Hip Hop</p>
+        <p class="card-text"><strong>Prezzo:</strong> $5</p>
+        <p class="card-text"><strong>Album:</strong> La Divina Commedia</p>
+        <button class="btn btn-primary btn-sm" onclick="aggiungiAlCarrello('Cd', 2023, 'Volgare', 'La Divina Commedia', 'Tedua, Lazza', 'Hip Hop', 5)">Aggiungi al carrello</button>
+      </div>
+    </div>
+
+
+    <div class="card">
+      <img src="https://i.discogs.com/K3eBJxeoTieENf7dfLkfxIKVzEduG_lpglnDiyD_DNg/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTI4NTcw/NTQ5LTE3MDI5NTc3/NjEtNTQzNC5qcGVn.jpeg" class="card-img-top" alt="Copertina dell'album">
+      <div class="card-body">
+        <h5 class="card-title"><strong>RED LIGHT</strong></h5>
+        <p class="card-text"><strong>Tipo:</strong> CD</p>
+        <p class="card-text"><strong>Anno:</strong> 2023</p>
+        <p class="card-text"><strong>Artista:</strong> Tedua</p>
+        <p class="card-text"><strong>Brano:</strong> Singolo</p>
+        <p class="card-text"><strong>Genere:</strong> Hip Hop</p>
+        <p class="card-text"><strong>Prezzo:</strong> $5</p>
+        <p class="card-text"><strong>Album:</strong> La Divina Commedia</p>
+        <button class="btn btn-primary btn-sm" onclick="aggiungiAlCarrello('Cd', 2023, 'Red Light', 'La Divina Commedia', 'Tedua', 'Hip Hop', 5)">Aggiungi al carrello</button>
+      </div>
+    </div>
+
+
+    <div class="card">
+      <img src="https://i.discogs.com/K3eBJxeoTieENf7dfLkfxIKVzEduG_lpglnDiyD_DNg/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTI4NTcw/NTQ5LTE3MDI5NTc3/NjEtNTQzNC5qcGVn.jpeg" class="card-img-top" alt="Copertina dell'album">
+      <div class="card-body">
+        <h5 class="card-title"><strong>ANIME LIBERE</strong></h5>
+        <p class="card-text"><strong>Tipo:</strong> CD</p>
+        <p class="card-text"><strong>Anno:</strong> 2023</p>
+        <p class="card-text"><strong>Artista:</strong> Tedua, Rkomi, Bresh</p>
+        <p class="card-text"><strong>Brano:</strong> Singolo</p>
+        <p class="card-text"><strong>Genere:</strong> Hip Hop</p>
+        <p class="card-text"><strong>Prezzo:</strong> $5</p>
+        <p class="card-text"><strong>Album:</strong> La Divina Commedia</p>
+        <button class="btn btn-primary btn-sm" onclick="aggiungiAlCarrello('Cd', 2023, 'Anime Libere', 'La Divina Commedia', 'Tedua, Rkomi, Bresh', 'Hip Hop', 5)">Aggiungi al carrello</button>
+      </div>
+    </div>
+
+
+    <div class="card">
+      <img src="https://i.discogs.com/K3eBJxeoTieENf7dfLkfxIKVzEduG_lpglnDiyD_DNg/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTI4NTcw/NTQ5LTE3MDI5NTc3/NjEtNTQzNC5qcGVn.jpeg" class="card-img-top" alt="Copertina dell'album">
+      <div class="card-body">
+        <h5 class="card-title"><strong>MALAMENTE </strong></h5>
+        <p class="card-text"><strong>Tipo:</strong> CD</p>
+        <p class="card-text"><strong>Anno:</strong> 2023</p>
+        <p class="card-text"><strong>Artista:</strong> Tedua</p>
+        <p class="card-text"><strong>Brano:</strong> Singolo</p>
+        <p class="card-text"><strong>Genere:</strong> Hip Hop</p>
+        <p class="card-text"><strong>Prezzo:</strong> $5</p>
+        <p class="card-text"><strong>Album:</strong> La Divina Commedia</p>
+        <button class="btn btn-primary btn-sm" onclick="aggiungiAlCarrello('Cd', 2023, 'Malamente', 'La Divina Commedia', 'Tedua', 'Hip Hop', 5)">Aggiungi al carrello</button>
+      </div>
+    </div>
+
+
+    <div class="card">
+      <img src="https://i.discogs.com/K3eBJxeoTieENf7dfLkfxIKVzEduG_lpglnDiyD_DNg/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTI4NTcw/NTQ5LTE3MDI5NTc3/NjEtNTQzNC5qcGVn.jpeg" class="card-img-top" alt="Copertina dell'album">
+      <div class="card-body">
+        <h5 class="card-title"><strong>LA VERITÀ </strong></h5>
+        <p class="card-text"><strong>Tipo:</strong> CD</p>
+        <p class="card-text"><strong>Anno:</strong> 2023</p>
+        <p class="card-text"><strong>Artista:</strong> Tedua, Bnkr44</p>
+        <p class="card-text"><strong>Brano:</strong> Singolo</p>
+        <p class="card-text"><strong>Genere:</strong> Hip Hop</p>
+        <p class="card-text"><strong>Prezzo:</strong> $5</p>
+        <p class="card-text"><strong>Album:</strong> La Divina Commedia</p>
+        <button class="btn btn-primary btn-sm" onclick="aggiungiAlCarrello('Cd', 2023, 'LA VERITÀ', 'La Divina Commedia', 'Tedua, Bnkr44', 'Hip Hop', 5)">Aggiungi al carrello</button>
+      </div>
+    </div>
+
+
+    <div class="card">
+      <img src="https://i.discogs.com/K3eBJxeoTieENf7dfLkfxIKVzEduG_lpglnDiyD_DNg/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTI4NTcw/NTQ5LTE3MDI5NTc3/NjEtNTQzNC5qcGVn.jpeg" class="card-img-top" alt="Copertina dell'album">
+      <div class="card-body">
+        <h5 class="card-title"><strong>SOFFIERÀ </strong></h5>
+        <p class="card-text"><strong>Tipo:</strong> CD</p>
+        <p class="card-text"><strong>Anno:</strong> 2023</p>
+        <p class="card-text"><strong>Artista:</strong> Tedua</p>
+        <p class="card-text"><strong>Brano:</strong> Singolo</p>
+        <p class="card-text"><strong>Genere:</strong> Hip Hop</p>
+        <p class="card-text"><strong>Prezzo:</strong> $5</p>
+        <p class="card-text"><strong>Album:</strong> La Divina Commedia</p>
+        <button class="btn btn-primary btn-sm" onclick="aggiungiAlCarrello('Cd', 2023, 'Soffierà', 'La Divina Commedia', 'Tedua', 'Hip Hop', 5)">Aggiungi al carrello</button>
+      </div>
+    </div>
+
+
+    <h6><strong>VITA VERA</strong></h6>
+    <div class="card">
+      <img src="https://i.discogs.com/Qk4g71RyrpGFX3ve3iIE-DJdA17RnwIlotpmUsHbiJs/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE2MTU4/MzA0LTE2MDQ0Mjc1/NzAtNzk1MC5qcGVn.jpeg" class="card-img-top" alt="Copertina dell'album">
+      <div class="card-body">
+        <h5 class="card-title"><strong>RARI </strong></h5>
+        <p class="card-text"><strong>Tipo:</strong> CD</p>
+        <p class="card-text"><strong>Anno:</strong> 2020</p>
+        <p class="card-text"><strong>Artista:</strong> Tedua, Paky, Shiva</p>
+        <p class="card-text"><strong>Brano:</strong> Singolo</p>
+        <p class="card-text"><strong>Genere:</strong> Hip Hop</p>
+        <p class="card-text"><strong>Prezzo:</strong> $5</p>
+        <p class="card-text"><strong>Album:</strong> Vita Vera</p>
+        <button class="btn btn-primary btn-sm" onclick="aggiungiAlCarrello('Cd', 2020, 'Rari', 'Vita Vera', 'Tedua, Paky, Shiva', 'Hip Hop', 5)">Aggiungi al carrello</button>
+      </div>
+    </div>
+
+
+    <div class="card">
+      <img src="https://i.discogs.com/Qk4g71RyrpGFX3ve3iIE-DJdA17RnwIlotpmUsHbiJs/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE2MTU4/MzA0LTE2MDQ0Mjc1/NzAtNzk1MC5qcGVn.jpeg" class="card-img-top" alt="Copertina dell'album">
+      <div class="card-body">
+        <h5 class="card-title"><strong>LO SAI </strong></h5>
+        <p class="card-text"><strong>Tipo:</strong> CD</p>
+        <p class="card-text"><strong>Anno:</strong> 2020</p>
+        <p class="card-text"><strong>Artista:</strong> Tedua, Sick Luke</p>
+        <p class="card-text"><strong>Brano:</strong> Singolo</p>
+        <p class="card-text"><strong>Genere:</strong> Hip Hop</p>
+        <p class="card-text"><strong>Prezzo:</strong> $5</p>
+        <p class="card-text"><strong>Album:</strong> Vita Vera</p>
+        <button class="btn btn-primary btn-sm" onclick="aggiungiAlCarrello('Cd', 2020, 'Lo Sai', 'Vita Vera', 'Tedua, Sick Luke', 'Hip Hop', 5)">Aggiungi al carrello</button>
+      </div>
+    </div>
+
+
+    <h6><strong>MOWGLI</strong></h6>
+    <div class="card">
+      <img src="https://images.genius.com/e5c75336e0e951823b7fde6e26cb46fb.1000x1000x1.jpg" class="card-img-top" alt="Copertina dell'album">
+      <div class="card-body">
+        <h5 class="card-title"><strong>VERTIGINI </strong></h5>
+        <p class="card-text"><strong>Tipo:</strong> CD</p>
+        <p class="card-text"><strong>Anno:</strong> 2018</p>
+        <p class="card-text"><strong>Artista:</strong> Tedua, Chris Nolan</p>
+        <p class="card-text"><strong>Brano:</strong> Singolo</p>
+        <p class="card-text"><strong>Genere:</strong> Hip Hop</p>
+        <p class="card-text"><strong>Prezzo:</strong> $5</p>
+        <p class="card-text"><strong>Album:</strong> Mowgli</p>
+        <button class="btn btn-primary btn-sm" onclick="aggiungiAlCarrello('Cd', 2018, 'Rari', 'Mowgli', 'Tedua, Chris Nolan', 'Hip Hop', 5)">Aggiungi al carrello</button>
+      </div>
+    </div>
+
+
+    <h6><strong>ORANGE COUNTRY CALIFORNIA</strong></h6>
+    <div class="card">
+      <img src="https://i.discogs.com/Jsj6YKrSd6vpN5Hw4nNsFZI5eTvC6Ajxzabu134WA9E/rs:fit/g:sm/q:90/h:592/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTEwMDE2/NTEwLTE0OTU2OTY2/NDUtNjc0My5qcGVn.jpeg" class="card-img-top" alt="Copertina dell'album">
+      <div class="card-body">
+        <h5 class="card-title"><strong>LINGERIE </strong></h5>
+        <p class="card-text"><strong>Tipo:</strong> CD</p>
+        <p class="card-text"><strong>Anno:</strong> 2017</p>
+        <p class="card-text"><strong>Artista:</strong> Tedua, Sfera Ebbasta</p>
+        <p class="card-text"><strong>Brano:</strong> Singolo</p>
+        <p class="card-text"><strong>Genere:</strong> Hip Hop</p>
+        <p class="card-text"><strong>Prezzo:</strong> $5</p>
+        <p class="card-text"><strong>Album:</strong> Orange Country California</p>
+        <button class="btn btn-primary btn-sm" onclick="aggiungiAlCarrello('Cd', 2018, 'Lingerie', 'Orange Country California', 'Tedua, Sfera Ebbasta', 'Hip Hop', 5)">Aggiungi al carrello</button>
+      </div>
+    </div>
+
+
+    <div class="card">
+      <img src="https://i.discogs.com/Jsj6YKrSd6vpN5Hw4nNsFZI5eTvC6Ajxzabu134WA9E/rs:fit/g:sm/q:90/h:592/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTEwMDE2/NTEwLTE0OTU2OTY2/NDUtNjc0My5qcGVn.jpeg" class="card-img-top" alt="Copertina dell'album">
+      <div class="card-body">
+        <h5 class="card-title"><strong>STEP BY STEP </strong></h5>
+        <p class="card-text"><strong>Tipo:</strong> CD</p>
+        <p class="card-text"><strong>Anno:</strong> 2017</p>
+        <p class="card-text"><strong>Artista:</strong> Tedua, Bresh</p>
+        <p class="card-text"><strong>Brano:</strong> Singolo</p>
+        <p class="card-text"><strong>Genere:</strong> Hip Hop</p>
+        <p class="card-text"><strong>Prezzo:</strong> $5</p>
+        <p class="card-text"><strong>Album:</strong> Orange Country California</p>
+        <button class="btn btn-primary btn-sm" onclick="aggiungiAlCarrello('Cd', 2017, 'Step By Step', 'Orange Country California', 'Tedua, Bresh', 'Hip Hop', 5)">Aggiungi al carrello</button>
+      </div>
+    </div>
+
+    <h6><strong>DON'T PANIC</strong></h6>
+    <div class="card">
+      <img src="https://images.genius.com/d9c34a84d731492c0943946dc27357a4.1000x1000x1.jpg" class="card-img-top" alt="Copertina dell'album">
+      <div class="card-body">
+        <h5 class="card-title"><strong>LO-FI DRILL </strong></h5>
+        <p class="card-text"><strong>Tipo:</strong> CD</p>
+        <p class="card-text"><strong>Anno:</strong> 2021</p>
+        <p class="card-text"><strong>Artista:</strong> Tedua, Shune</p>
+        <p class="card-text"><strong>Brano:</strong> Singolo</p>
+        <p class="card-text"><strong>Genere:</strong> Hip Hop</p>
+        <p class="card-text"><strong>Prezzo:</strong> $5</p>
+        <p class="card-text"><strong>Album:</strong> Don't Panic</p>
+        <button class="btn btn-primary btn-sm" onclick="aggiungiAlCarrello('Cd', 2021, 'Lo-Fi Drill', 'Dont panic', 'Tedua, Shune', 'Hip Hop', 5)">Aggiungi al carrello</button>
+      </div>
+    </div>
+
+    <h6><strong>ALTRO- TEDUA</strong></h6>
+    <div class="card">
+      <img src="https://m.media-amazon.com/images/I/91Wv1zT8DRL._UF1000,1000_QL80_.jpg" class="card-img-top" alt="Copertina dell'album">
+      <div class="card-body">
+        <h5 class="card-title"><strong>CICATRICI </strong></h5>
+        <p class="card-text"><strong>Tipo:</strong> CD</p>
+        <p class="card-text"><strong>Anno:</strong> 2022</p>
+        <p class="card-text"><strong>Artista:</strong> Shiva, Tedua</p>
+        <p class="card-text"><strong>Brano:</strong> Singolo</p>
+        <p class="card-text"><strong>Genere:</strong> Hip Hop</p>
+        <p class="card-text"><strong>Prezzo:</strong> $5</p>
+        <p class="card-text"><strong>Album:</strong> Milano Demons</p>
+        <button class="btn btn-primary btn-sm" onclick="aggiungiAlCarrello('Cd', 2022, 'Cicatrici', 'Milano Demons', 'Shiva, Tedua', 'Hip Hop', 5)">Aggiungi al carrello</button>
+      </div>
+    </div>
+
+
+    <div class="card">
+      <img src="https://www.sentireascoltare.com/wp-content/uploads/2022/09/tha-sup-carattere-speciale-2022-cover.jpg" class="card-img-top" alt="Copertina dell'album">
+      <div class="card-body">
+        <h5 class="card-title"><strong>DIMMI CHE C'È </strong></h5>
+        <p class="card-text"><strong>Tipo:</strong> CD</p>
+        <p class="card-text"><strong>Anno:</strong> 2022</p>
+        <p class="card-text"><strong>Artista:</strong> Thasup, Tedua</p>
+        <p class="card-text"><strong>Brano:</strong> Singolo</p>
+        <p class="card-text"><strong>Genere:</strong> Hip Hop</p>
+        <p class="card-text"><strong>Prezzo:</strong> $5</p>
+        <p class="card-text"><strong>Album:</strong> Carattere Speciale</p>
+        <button class="btn btn-primary btn-sm" onclick="aggiungiAlCarrello('Cd', 2022, 'Dimmi che cè', 'Carattere Speciale', 'Thasup, Tedua', 'Hip Hop', 5)">Aggiungi al carrello</button>
+      </div>
+    </div>
+
+
+    <div class="card">
+      <img src="https://i.discogs.com/v8o1ID2raEiScbWjGxZjvKVyjUvF55kLGOepYRG6qPs/rs:fit/g:sm/q:90/h:596/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTI5MDA1/MTg5LTE3MDA4MjY4/MzgtNzc5Ni5wbmc.jpeg" class="card-img-top" alt="Copertina dell'album">
+      <div class="card-body">
+        <h5 class="card-title"><strong>MOMENTI NO </strong></h5>
+        <p class="card-text"><strong>Tipo:</strong> CD</p>
+        <p class="card-text"><strong>Anno:</strong> 2023</p>
+        <p class="card-text"><strong>Artista:</strong> Sfera, Tedua</p>
+        <p class="card-text"><strong>Brano:</strong> Singolo</p>
+        <p class="card-text"><strong>Genere:</strong> Hip Hop</p>
+        <p class="card-text"><strong>Prezzo:</strong> $5</p>
+        <p class="card-text"><strong>Album:</strong> X2VR</p>
+        <button class="btn btn-primary btn-sm" onclick="aggiungiAlCarrello('Cd', 2023, 'Momenti No', 'X2VR', 'Sfera, Tedua', 'Hip Hop', 5)">Aggiungi al carrello</button>
+      </div>
+    </div>
+
+
+    <div class="card">
+      <img src="https://i.discogs.com/OhdmICvVfUkpUOzs--QzTGRrV3Qx7ZikdEms5NJQcnc/rs:fit/g:sm/q:90/h:600/w:595/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTI5OTg2/MTExLTE3MTAwMDk4/ODItNjY0My5qcGVn.jpeg" class="card-img-top" alt="Copertina dell'album">
+      <div class="card-body">
+        <h5 class="card-title"><strong>EVA </strong></h5>
+        <p class="card-text"><strong>Tipo:</strong> CD</p>
+        <p class="card-text"><strong>Anno:</strong> 2024</p>
+        <p class="card-text"><strong>Artista:</strong> Kid Yugi, Tedua </p>
+        <p class="card-text"><strong>Brano:</strong> Singolo</p>
+        <p class="card-text"><strong>Genere:</strong> Hip Hop</p>
+        <p class="card-text"><strong>Prezzo:</strong> $5</p>
+        <p class="card-text"><strong>Album:</strong> I Nomi Del Diavolo</p>
+        <button class="btn btn-primary btn-sm" onclick="aggiungiAlCarrello('Cd', 2024, 'Eva', 'I Nomi Del Diavolo', 'Kid Yugi, Tedua', 'Hip Hop', 5)">Aggiungi al carrello</button>
+      </div>
+    </div>
+
+
+    <div class="card">
+      <img src="https://i.scdn.co/image/ab67616d0000b2735f6fb9109b83fb4f425b3eaf" class="card-img-top" alt="Copertina dell'album">
+      <div class="card-body">
+        <h5 class="card-title"><strong>STRANIERO </strong></h5>
+        <p class="card-text"><strong>Tipo:</strong> CD</p>
+        <p class="card-text"><strong>Anno:</strong> 2023</p>
+        <p class="card-text"><strong>Artista:</strong> Massimo Pericolo, Tedua </p>
+        <p class="card-text"><strong>Brano:</strong> Singolo</p>
+        <p class="card-text"><strong>Genere:</strong> Hip Hop</p>
+        <p class="card-text"><strong>Prezzo:</strong> $5</p>
+        <p class="card-text"><strong>Album:</strong> Le Cose Cambiano</p>
+        <button class="btn btn-primary btn-sm" onclick="aggiungiAlCarrello('Cd', 2023, 'Straniero', 'Le Cose Cambiano', 'Massimo Pericolo, Tedua', 'Hip Hop', 5)">Aggiungi al carrello</button>
+      </div>
+    </div>
+
+
+    <div class="card">
+      <img src="https://www.lafeltrinelli.it/images/0602465264265_0_464_0_75.jpg" class="card-img-top" alt="Copertina dell'album">
+      <div class="card-body">
+        <h5 class="card-title"><strong>DOPO LE 4 </strong></h5>
+        <p class="card-text"><strong>Tipo:</strong> CD</p>
+        <p class="card-text"><strong>Anno:</strong> 2024</p>
+        <p class="card-text"><strong>Artista:</strong> Tony Effe, Tedua, Bresh </p>
+        <p class="card-text"><strong>Brano:</strong> Singolo</p>
+        <p class="card-text"><strong>Genere:</strong> Hip Hop</p>
+        <p class="card-text"><strong>Prezzo:</strong> $5</p>
+        <p class="card-text"><strong>Album:</strong> Icon</p>
+        <button class="btn btn-primary btn-sm" onclick="aggiungiAlCarrello('Cd', 2024, 'Dopo Le 4', 'Icon', 'Tony Effe, Tedua, Bresh', 'Hip Hop', 5)">Aggiungi al carrello</button>
+      </div>
+    </div>
+
+
+    <h4><strong>SFERA</strong></h4>
+    <h6><strong>X2VR</strong></h6>
+    <div class="card">
+      <img src="https://i.discogs.com/v8o1ID2raEiScbWjGxZjvKVyjUvF55kLGOepYRG6qPs/rs:fit/g:sm/q:90/h:596/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTI5MDA1/MTg5LTE3MDA4MjY4/MzgtNzc5Ni5wbmc.jpeg" class="card-img-top" alt="Copertina dell'album">
+      <div class="card-body">
+        <h5 class="card-title"><strong>GOL</strong></h5>
+        <p class="card-text"><strong>Tipo:</strong> CD</p>
+        <p class="card-text"><strong>Anno:</strong> 2023</p>
+        <p class="card-text"><strong>Artista:</strong> Sfera, Guè</p>
+        <p class="card-text"><strong>Brano:</strong> Singolo</p>
+        <p class="card-text"><strong>Genere:</strong> Hip Hop</p>
+        <p class="card-text"><strong>Prezzo:</strong> $5</p>
+        <p class="card-text"><strong>Album:</strong> X2VR</p>
+        <button class="btn btn-primary btn-sm" onclick="aggiungiAlCarrello('Cd', 2023, 'Gol', 'X2VR', 'Sfera, Guè', 'Hip Hop', 5)">Aggiungi al carrello</button>
+      </div>
+    </div>
+
+
+    <div class="card">
+      <img src="https://i.discogs.com/v8o1ID2raEiScbWjGxZjvKVyjUvF55kLGOepYRG6qPs/rs:fit/g:sm/q:90/h:596/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTI5MDA1/MTg5LTE3MDA4MjY4/MzgtNzc5Ni5wbmc.jpeg" class="card-img-top" alt="Copertina dell'album">
+      <div class="card-body">
+        <h5 class="card-title"><strong>ANCHE STASERA</strong></h5>
+        <p class="card-text"><strong>Tipo:</strong> CD</p>
+        <p class="card-text"><strong>Anno:</strong> 2023</p>
+        <p class="card-text"><strong>Artista:</strong> Sfera, Elodie</p>
+        <p class="card-text"><strong>Brano:</strong> Singolo</p>
+        <p class="card-text"><strong>Genere:</strong> Hip Hop</p>
+        <p class="card-text"><strong>Prezzo:</strong> $5</p>
+        <p class="card-text"><strong>Album:</strong> X2VR</p>
+        <button class="btn btn-primary btn-sm" onclick="aggiungiAlCarrello('Cd', 2023, 'Anche Stasera', 'X2VR', 'Sfera, Elodie', 'Hip Hop', 5)">Aggiungi al carrello</button>
+      </div>
+    </div>
+
+
+    <div class="card">
+      <img src="https://i.discogs.com/v8o1ID2raEiScbWjGxZjvKVyjUvF55kLGOepYRG6qPs/rs:fit/g:sm/q:90/h:596/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTI5MDA1/MTg5LTE3MDA4MjY4/MzgtNzc5Ni5wbmc.jpeg" class="card-img-top" alt="Copertina dell'album">
+      <div class="card-body">
+        <h5 class="card-title"><strong>3UPHON</strong></h5>
+        <p class="card-text"><strong>Tipo:</strong> CD</p>
+        <p class="card-text"><strong>Anno:</strong> 2023</p>
+        <p class="card-text"><strong>Artista:</strong> Sfera, Thasup,Tony Effe</p>
+        <p class="card-text"><strong>Brano:</strong> Singolo</p>
+        <p class="card-text"><strong>Genere:</strong> Hip Hop</p>
+        <p class="card-text"><strong>Prezzo:</strong> $5</p>
+        <p class="card-text"><strong>Album:</strong> X2VR</p>
+        <button class="btn btn-primary btn-sm" onclick="aggiungiAlCarrello('Cd', 2023, '3uphon', 'X2VR', 'Sfera, Thasup, Tony Effe', 'Hip Hop', 5)">Aggiungi al carrello</button>
+      </div>
+    </div>
+
+
+    <div class="card">
+      <img src="https://i.discogs.com/v8o1ID2raEiScbWjGxZjvKVyjUvF55kLGOepYRG6qPs/rs:fit/g:sm/q:90/h:596/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTI5MDA1/MTg5LTE3MDA4MjY4/MzgtNzc5Ni5wbmc.jpeg" class="card-img-top" alt="Copertina dell'album">
+      <div class="card-body">
+        <h5 class="card-title"><strong>15 PIANI</strong></h5>
+        <p class="card-text"><strong>Tipo:</strong> CD</p>
+        <p class="card-text"><strong>Anno:</strong> 2023</p>
+        <p class="card-text"><strong>Artista:</strong> Sfera, Marracash</p>
+        <p class="card-text"><strong>Brano:</strong> Singolo</p>
+        <p class="card-text"><strong>Genere:</strong> Hip Hop</p>
+        <p class="card-text"><strong>Prezzo:</strong> $5</p>
+        <p class="card-text"><strong>Album:</strong> X2VR</p>
+        <button class="btn btn-primary btn-sm" onclick="aggiungiAlCarrello('Cd', 2023, '15 Piani', 'X2VR', 'Sfera, Marracash', 'Hip Hop', 5)">Aggiungi al carrello</button>
+      </div>
+    </div>
+
+
+    <div class="card">
+      <img src="https://i.discogs.com/v8o1ID2raEiScbWjGxZjvKVyjUvF55kLGOepYRG6qPs/rs:fit/g:sm/q:90/h:596/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTI5MDA1/MTg5LTE3MDA4MjY4/MzgtNzc5Ni5wbmc.jpeg" class="card-img-top" alt="Copertina dell'album">
+      <div class="card-body">
+        <h5 class="card-title"><strong>CIAO BELLA</strong></h5>
+        <p class="card-text"><strong>Tipo:</strong> CD</p>
+        <p class="card-text"><strong>Anno:</strong> 2023</p>
+        <p class="card-text"><strong>Artista:</strong> Sfera, Anna</p>
+        <p class="card-text"><strong>Brano:</strong> Singolo</p>
+        <p class="card-text"><strong>Genere:</strong> Hip Hop</p>
+        <p class="card-text"><strong>Prezzo:</strong> $5</p>
+        <p class="card-text"><strong>Album:</strong> X2VR</p>
+        <button class="btn btn-primary btn-sm" onclick="aggiungiAlCarrello('Cd', 2023, 'Ciao Bella', 'X2VR', 'Sfera, Anna', 'Hip Hop', 5)">Aggiungi al carrello</button>
+      </div>
+    </div>
+
+
+    <div class="card">
+      <img src="https://i.discogs.com/v8o1ID2raEiScbWjGxZjvKVyjUvF55kLGOepYRG6qPs/rs:fit/g:sm/q:90/h:596/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTI5MDA1/MTg5LTE3MDA4MjY4/MzgtNzc5Ni5wbmc.jpeg" class="card-img-top" alt="Copertina dell'album">
+      <div class="card-body">
+        <h5 class="card-title"><strong>FRAGILE</strong></h5>
+        <p class="card-text"><strong>Tipo:</strong> CD</p>
+        <p class="card-text"><strong>Anno:</strong> 2023</p>
+        <p class="card-text"><strong>Artista:</strong> Sfera</p>
+        <p class="card-text"><strong>Brano:</strong> Singolo</p>
+        <p class="card-text"><strong>Genere:</strong> Hip Hop</p>
+        <p class="card-text"><strong>Prezzo:</strong> $5</p>
+        <p class="card-text"><strong>Album:</strong> X2VR</p>
+        <button class="btn btn-primary btn-sm" onclick="aggiungiAlCarrello('Cd', 2023, 'Fragile', 'X2VR', 'Sfera','Hip Hop', 5)">Aggiungi al carrello</button>
+      </div>
+    </div>
+
+
+    <div class="card">
+      <img src="https://i.discogs.com/v8o1ID2raEiScbWjGxZjvKVyjUvF55kLGOepYRG6qPs/rs:fit/g:sm/q:90/h:596/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTI5MDA1/MTg5LTE3MDA4MjY4/MzgtNzc5Ni5wbmc.jpeg" class="card-img-top" alt="Copertina dell'album">
+      <div class="card-body">
+        <h5 class="card-title"><strong>CALCOLATRICI</strong></h5>
+        <p class="card-text"><strong>Tipo:</strong> CD</p>
+        <p class="card-text"><strong>Anno:</strong> 2023</p>
+        <p class="card-text"><strong>Artista:</strong> Sfera, Geolier, Simba La Rue, Baby Gang</p>
+        <p class="card-text"><strong>Brano:</strong> Singolo</p>
+        <p class="card-text"><strong>Genere:</strong> Hip Hop</p>
+        <p class="card-text"><strong>Prezzo:</strong> $5</p>
+        <p class="card-text"><strong>Album:</strong> X2VR</p>
+        <button class="btn btn-primary btn-sm" onclick="aggiungiAlCarrello('Cd', 2023, 'CALCOLATRICI', 'X2VR', 'Sfera, Geolier, Simba La Rue, Baby Gang', 'Hip Hop', 5)">Aggiungi al carrello</button>
+      </div>
+    </div>
+
+
+    <div class="card">
+      <img src="https://i.discogs.com/v8o1ID2raEiScbWjGxZjvKVyjUvF55kLGOepYRG6qPs/rs:fit/g:sm/q:90/h:596/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTI5MDA1/MTg5LTE3MDA4MjY4/MzgtNzc5Ni5wbmc.jpeg" class="card-img-top" alt="Copertina dell'album">
+      <div class="card-body">
+        <h5 class="card-title"><strong>VDLC</strong></h5>
+        <p class="card-text"><strong>Tipo:</strong> CD</p>
+        <p class="card-text"><strong>Anno:</strong> 2023</p>
+        <p class="card-text"><strong>Artista:</strong> Sfera</p>
+        <p class="card-text"><strong>Brano:</strong> Singolo</p>
+        <p class="card-text"><strong>Genere:</strong> Hip Hop</p>
+        <p class="card-text"><strong>Prezzo:</strong> $5</p>
+        <p class="card-text"><strong>Album:</strong> X2VR</p>
+        <button class="btn btn-primary btn-sm" onclick="aggiungiAlCarrello('Cd', 2023, 'VDLC', 'X2VR', 'Sfera', 'Hip Hop', 5)">Aggiungi al carrello</button>
+      </div>
+    </div>
+
+
+    <div class="card">
+      <img src="https://i.discogs.com/v8o1ID2raEiScbWjGxZjvKVyjUvF55kLGOepYRG6qPs/rs:fit/g:sm/q:90/h:596/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTI5MDA1/MTg5LTE3MDA4MjY4/MzgtNzc5Ni5wbmc.jpeg" class="card-img-top" alt="Copertina dell'album">
+      <div class="card-body">
+        <h5 class="card-title"><strong>MOMENTI NO</strong></h5>
+        <p class="card-text"><strong>Tipo:</strong> CD</p>
+        <p class="card-text"><strong>Anno:</strong> 2023</p>
+        <p class="card-text"><strong>Artista:</strong> Sfera, Tedua</p>
+        <p class="card-text"><strong>Brano:</strong> Singolo</p>
+        <p class="card-text"><strong>Genere:</strong> Hip Hop</p>
+        <p class="card-text"><strong>Prezzo:</strong> $5</p>
+        <p class="card-text"><strong>Album:</strong> X2VR</p>
+        <button class="btn btn-primary btn-sm" onclick="aggiungiAlCarrello('Cd', 2023, 'Momenti No', 'X2VR', 'Sfera, Tedua', 'Hip Hop', 5)">Aggiungi al carrello</button>
+      </div>
+    </div>
+
+
+    <h6><strong>FAMOSO</strong></h6>
+    <div class="card">
+      <img src="https://i.discogs.com/wYYktli8DKS51i8uUJJAcC-Pau0hZhtXpjkFHAFz0fU/rs:fit/g:sm/q:90/h:593/w:593/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE2MTc3/Mjk1LTE2MDQ3NjEz/MDEtMTYzNi5qcGVn.jpeg" class="card-img-top" alt="Copertina dell'album">
+      <div class="card-body">
+        <h5 class="card-title"><strong>MALE</strong></h5>
+        <p class="card-text"><strong>Tipo:</strong> CD</p>
+        <p class="card-text"><strong>Anno:</strong> 2020</p>
+        <p class="card-text"><strong>Artista:</strong> Sfera</p>
+        <p class="card-text"><strong>Brano:</strong> Singolo</p>
+        <p class="card-text"><strong>Genere:</strong> Hip Hop</p>
+        <p class="card-text"><strong>Prezzo:</strong> $5</p>
+        <p class="card-text"><strong>Album:</strong> Famoso</p>
+        <button class="btn btn-primary btn-sm" onclick="aggiungiAlCarrello('Cd', 2020, 'Male', 'Famoso', 'Sfera', 'Hip Hop', 5)">Aggiungi al carrello</button>
+      </div>
+    </div>
+
+
+    <div class="card">
+      <img src="https://i.discogs.com/wYYktli8DKS51i8uUJJAcC-Pau0hZhtXpjkFHAFz0fU/rs:fit/g:sm/q:90/h:593/w:593/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE2MTc3/Mjk1LTE2MDQ3NjEz/MDEtMTYzNi5qcGVn.jpeg" class="card-img-top" alt="Copertina dell'album">
+      <div class="card-body">
+        <h5 class="card-title"><strong>BOTTIGLIE PRIVÈ</strong></h5>
+        <p class="card-text"><strong>Tipo:</strong> CD</p>
+        <p class="card-text"><strong>Anno:</strong> 2020</p>
+        <p class="card-text"><strong>Artista:</strong> Sfera</p>
+        <p class="card-text"><strong>Brano:</strong> Singolo</p>
+        <p class="card-text"><strong>Genere:</strong> Hip Hop</p>
+        <p class="card-text"><strong>Prezzo:</strong> $5</p>
+        <p class="card-text"><strong>Album:</strong> Famoso</p>
+        <button class="btn btn-primary btn-sm" onclick="aggiungiAlCarrello('Cd', 2020, 'Bottiglie Privè', 'Famoso', 'Sfera', 'Hip Hop', 5)">Aggiungi al carrello</button>
+      </div>
+    </div>
+
+
+    <div class="card">
+      <img src="https://i.discogs.com/wYYktli8DKS51i8uUJJAcC-Pau0hZhtXpjkFHAFz0fU/rs:fit/g:sm/q:90/h:593/w:593/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE2MTc3/Mjk1LTE2MDQ3NjEz/MDEtMTYzNi5qcGVn.jpeg" class="card-img-top" alt="Copertina dell'album">
+      <div class="card-body">
+        <h5 class="card-title"><strong>UHLALA</strong></h5>
+        <p class="card-text"><strong>Tipo:</strong> CD</p>
+        <p class="card-text"><strong>Anno:</strong> 2020</p>
+        <p class="card-text"><strong>Artista:</strong> Sfera</p>
+        <p class="card-text"><strong>Brano:</strong> Singolo</p>
+        <p class="card-text"><strong>Genere:</strong> Hip Hop</p>
+        <p class="card-text"><strong>Prezzo:</strong> $5</p>
+        <p class="card-text"><strong>Album:</strong> Famoso</p>
+        <button class="btn btn-primary btn-sm" onclick="aggiungiAlCarrello('Cd', 2020, 'Uhlala', 'Famoso', 'Sfera', 'Hip Hop', 5)">Aggiungi al carrello</button>
+      </div>
+    </div>
+
+
+    <h6><strong>ALTRO- SFERA</strong></h6>
+    <div class="card">
+      <img src="https://i.discogs.com/wYYktli8DKS51i8uUJJAcC-Pau0hZhtXpjkFHAFz0fU/rs:fit/g:sm/q:90/h:593/w:593/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE2MTc3/Mjk1LTE2MDQ3NjEz/MDEtMTYzNi5qcGVn.jpeg" class="card-img-top" alt="Copertina dell'album">
+      <div class="card-body">
+        <h5 class="card-title"><strong>MALE</strong></h5>
+        <p class="card-text"><strong>Tipo:</strong> CD</p>
+        <p class="card-text"><strong>Anno:</strong> 2020</p>
+        <p class="card-text"><strong>Artista:</strong> Sfera</p>
+        <p class="card-text"><strong>Brano:</strong> Singolo</p>
+        <p class="card-text"><strong>Genere:</strong> Hip Hop</p>
+        <p class="card-text"><strong>Prezzo:</strong> $5</p>
+        <p class="card-text"><strong>Album:</strong> Famoso</p>
+        <button class="btn btn-primary btn-sm" onclick="aggiungiAlCarrello('Cd', 2020, 'Male', 'Famoso', 'Sfera', 'Hip Hop', 5)">Aggiungi al carrello</button>
+      </div>
+    </div>
+
+
+    <div class="card">
+      <img src="https://m.media-amazon.com/images/I/71HQ9sRTH3L._UF894,1000_QL80_.jpg" class="card-img-top" alt="Copertina dell'album">
+      <div class="card-body">
+        <h5 class="card-title"><strong>UN MILIONE DI VOLTE</strong></h5>
+        <p class="card-text"><strong>Tipo:</strong> CD</p>
+        <p class="card-text"><strong>Anno:</strong> 2023</p>
+        <p class="card-text"><strong>Artista:</strong> Shiva, Sfera</p>
+        <p class="card-text"><strong>Brano:</strong> Singolo</p>
+        <p class="card-text"><strong>Genere:</strong> Hip Hop</p>
+        <p class="card-text"><strong>Prezzo:</strong> $5</p>
+        <p class="card-text"><strong>Album:</strong> Santana Season</p>
+        <button class="btn btn-primary btn-sm" onclick="aggiungiAlCarrello('Cd', 2023, 'Un Milione Di Volte', 'Santana Season', 'Shiva, Sfera', 'Hip Hop', 5)">Aggiungi al carrello</button>
+      </div>
+    </div>
+
+
+<div class="card">
+      <img src="https://i.discogs.com/K3eBJxeoTieENf7dfLkfxIKVzEduG_lpglnDiyD_DNg/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTI4NTcw/NTQ5LTE3MDI5NTc3/NjEtNTQzNC5qcGVn.jpeg" class="card-img-top" alt="Copertina dell'album">
+      <div class="card-body">
+        <h5 class="card-title"><strong>HOE</strong></h5>
+        <p class="card-text"><strong>Tipo:</strong> CD</p>
+        <p class="card-text"><strong>Anno:</strong> 2023</p>
+        <p class="card-text"><strong>Artista:</strong> Tedua, Sfera</p>
+        <p class="card-text"><strong>Brano:</strong> Singolo</p>
+        <p class="card-text"><strong>Genere:</strong> Hip Hop</p>
+        <p class="card-text"><strong>Prezzo:</strong> $5</p>
+        <p class="card-text"><strong>Album:</strong> La Divina Commedia</p>
+        <button class="btn btn-primary btn-sm" onclick="aggiungiAlCarrello('Cd', 2023, 'Hoe', 'La Divina Commedia', 'Tedua, Sfera', 'Hip Hop', 5)">Aggiungi al carrello</button>
+      </div>
+    </div>
+
+
+    <div class="card">
+      <img src="https://www.picclickimg.com/FIgAAOSwmIxkleJJ/EMIS-KILLAeffetto-NotteCD-Poster-FIRMATOsigillato.webp" class="card-img-top" alt="Copertina dell'album">
+      <div class="card-body">
+        <h5 class="card-title"><strong>ON FIRE</strong></h5>
+        <p class="card-text"><strong>Tipo:</strong> CD</p>
+        <p class="card-text"><strong>Anno:</strong> 2023</p>
+        <p class="card-text"><strong>Artista:</strong> Emis Killa, Sfera</p>
+        <p class="card-text"><strong>Brano:</strong> Singolo</p>
+        <p class="card-text"><strong>Genere:</strong> Hip Hop</p>
+        <p class="card-text"><strong>Prezzo:</strong> $5</p>
+        <p class="card-text"><strong>Album:</strong> Effetto Notte</p>
+        <button class="btn btn-primary btn-sm" onclick="aggiungiAlCarrello('Cd', 2023, 'On Fire', 'Effetto Notte', 'Emis Killa, Sfera', 'Hip Hop', 5)">Aggiungi al carrello</button>
+      </div>
+    </div>
+
+
+    <div class="card">
+      <img src="https://m.media-amazon.com/images/I/A1a7lR-GHbL._UF1000,1000_QL80_.jpg" class="card-img-top" alt="Copertina dell'album">
+      <div class="card-body">
+        <h5 class="card-title"><strong>PIOVE</strong></h5>
+        <p class="card-text"><strong>Tipo:</strong> CD</p>
+        <p class="card-text"><strong>Anno:</strong> 2022</p>
+        <p class="card-text"><strong>Artista:</strong> Lazza, Sfera</p>
+        <p class="card-text"><strong>Brano:</strong> Singolo</p>
+        <p class="card-text"><strong>Genere:</strong> Hip Hop</p>
+        <p class="card-text"><strong>Prezzo:</strong> $5</p>
+        <p class="card-text"><strong>Album:</strong> Sirio</p>
+        <button class="btn btn-primary btn-sm" onclick="aggiungiAlCarrello('Cd', 2022, 'Piove', 'Sirio', 'Lazza, Sfera', 'Hip Hop', 5)">Aggiungi al carrello</button>
+      </div>
+    </div>
+
+
+    <div class="card">
+      <img src="https://www.lafeltrinelli.it/images/0602465264265_0_464_0_75.jpg" class="card-img-top" alt="Copertina dell'album">
+      <div class="card-body">
+        <h5 class="card-title"><strong>PILLOLE</strong></h5>
+        <p class="card-text"><strong>Tipo:</strong> CD</p>
+        <p class="card-text"><strong>Anno:</strong> 2024</p>
+        <p class="card-text"><strong>Artista:</strong> Tony Effe, Sfera, Geolier</p>
+        <p class="card-text"><strong>Brano:</strong> Singolo</p>
+        <p class="card-text"><strong>Genere:</strong> Hip Hop</p>
+        <p class="card-text"><strong>Prezzo:</strong> $5</p>
+        <p class="card-text"><strong>Album:</strong> Icon</p>
+        <button class="btn btn-primary btn-sm" onclick="aggiungiAlCarrello('Cd', 2024, 'Pillole', 'Icon', 'Tony Effe, Sfera, Geolier', 'Hip Hop', 5)">Aggiungi al carrello</button>
+      </div>
+    </div>
+
+
+    <div class="card">
+      <img src="https://m.media-amazon.com/images/I/81XHG5Zk50L._UF1000,1000_QL80_.jpg" class="card-img-top" alt="Copertina dell'album">
+      <div class="card-body">
+        <h5 class="card-title"><strong>COOKIES N'CREAM</strong></h5>
+        <p class="card-text"><strong>Tipo:</strong> CD</p>
+        <p class="card-text"><strong>Anno:</strong> 2023</p>
+        <p class="card-text"><strong>Artista:</strong> Gué, Sfera, Anna</p>
+        <p class="card-text"><strong>Brano:</strong> Singolo</p>
+        <p class="card-text"><strong>Genere:</strong> Hip Hop</p>
+        <p class="card-text"><strong>Prezzo:</strong> $5</p>
+        <p class="card-text"><strong>Album:</strong> Madreperla</p>
+        <button class="btn btn-primary btn-sm" onclick="aggiungiAlCarrello('Cd', 2023, 'Cookies NCream', 'Madreperla', 'Gué, Sfera, Anna', 'Hip Hop', 5)">Aggiungi al carrello</button>
+      </div>
+    </div>
+
+
+    <div class="card">
+      <img src="https://i.discogs.com/OhdmICvVfUkpUOzs--QzTGRrV3Qx7ZikdEms5NJQcnc/rs:fit/g:sm/q:90/h:600/w:595/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTI5OTg2/MTExLTE3MTAwMDk4/ODItNjY0My5qcGVn.jpeg" class="card-img-top" alt="Copertina dell'album">
+      <div class="card-body">
+        <h5 class="card-title"><strong>EX ANGELO</strong></h5>
+        <p class="card-text"><strong>Tipo:</strong> CD</p>
+        <p class="card-text"><strong>Anno:</strong> 2024</p>
+        <p class="card-text"><strong>Artista:</strong> Kid Yugi, Sfera</p>
+        <p class="card-text"><strong>Brano:</strong> Singolo</p>
+        <p class="card-text"><strong>Genere:</strong> Hip Hop</p>
+        <p class="card-text"><strong>Prezzo:</strong> $5</p>
+        <p class="card-text"><strong>Album:</strong> I Nomi Del Diavolo</p>
+        <button class="btn btn-primary btn-sm" onclick="aggiungiAlCarrello('Cd', 2024, 'Ex Angelo', 'I Nomi Del Diavolo', 'Kid Yugi, Sfera', 'Hip Hop', 5)">Aggiungi al carrello</button>
+      </div>
+    </div>
+
+
+    <h4><strong>KID YUGI</strong></h4>
+    <h6><strong>I Nomi Del Diavolo</strong></h6>
+    <div class="card">
+      <img src="https://i.discogs.com/OhdmICvVfUkpUOzs--QzTGRrV3Qx7ZikdEms5NJQcnc/rs:fit/g:sm/q:90/h:600/w:595/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTI5OTg2/MTExLTE3MTAwMDk4/ODItNjY0My5qcGVn.jpeg" class="card-img-top" alt="Copertina dell'album">
+      <div class="card-body">
+        <h5 class="card-title"><strong>EVA </strong></h5>
+        <p class="card-text"><strong>Tipo:</strong> CD</p>
+        <p class="card-text"><strong>Anno:</strong> 2024</p>
+        <p class="card-text"><strong>Artista:</strong> Kid Yugi, Tedua </p>
+        <p class="card-text"><strong>Brano:</strong> Singolo</p>
+        <p class="card-text"><strong>Genere:</strong> Hip Hop</p>
+        <p class="card-text"><strong>Prezzo:</strong> $5</p>
+        <p class="card-text"><strong>Album:</strong> I Nomi Del Diavolo</p>
+        <button class="btn btn-primary btn-sm" onclick="aggiungiAlCarrello('Cd', 2024, 'Eva', 'I Nomi Del Diavolo', 'Kid Yugi, Tedua', 'Hip Hop', 5)">Aggiungi al carrello</button>
+      </div>
+    </div>
+
+
+    <div class="card">
+      <img src="https://i.discogs.com/OhdmICvVfUkpUOzs--QzTGRrV3Qx7ZikdEms5NJQcnc/rs:fit/g:sm/q:90/h:600/w:595/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTI5OTg2/MTExLTE3MTAwMDk4/ODItNjY0My5qcGVn.jpeg" class="card-img-top" alt="Copertina dell'album">
+      <div class="card-body">
+        <h5 class="card-title"><strong>GRAMMELOT </strong></h5>
+        <p class="card-text"><strong>Tipo:</strong> CD</p>
+        <p class="card-text"><strong>Anno:</strong> 2024</p>
+        <p class="card-text"><strong>Artista:</strong> Kid Yugi </p>
+        <p class="card-text"><strong>Brano:</strong> Singolo</p>
+        <p class="card-text"><strong>Genere:</strong> Hip Hop</p>
+        <p class="card-text"><strong>Prezzo:</strong> $5</p>
+        <p class="card-text"><strong>Album:</strong> I Nomi Del Diavolo</p>
+        <button class="btn btn-primary btn-sm" onclick="aggiungiAlCarrello('Cd', 2024, 'Grammelot', 'I Nomi Del Diavolo', 'Kid Yugi', 'Hip Hop', 5)">Aggiungi al carrello</button>
+      </div>
+    </div>
+
+
+    <div class="card">
+      <img src="https://i.discogs.com/OhdmICvVfUkpUOzs--QzTGRrV3Qx7ZikdEms5NJQcnc/rs:fit/g:sm/q:90/h:600/w:595/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTI5OTg2/MTExLTE3MTAwMDk4/ODItNjY0My5qcGVn.jpeg" class="card-img-top" alt="Copertina dell'album">
+      <div class="card-body">
+        <h5 class="card-title"><strong>EX ANGELO</strong></h5>
+        <p class="card-text"><strong>Tipo:</strong> CD</p>
+        <p class="card-text"><strong>Anno:</strong> 2024</p>
+        <p class="card-text"><strong>Artista:</strong> Kid Yugi, Sfera</p>
+        <p class="card-text"><strong>Brano:</strong> Singolo</p>
+        <p class="card-text"><strong>Genere:</strong> Hip Hop</p>
+        <p class="card-text"><strong>Prezzo:</strong> $5</p>
+        <p class="card-text"><strong>Album:</strong> I Nomi Del Diavolo</p>
+        <button class="btn btn-primary btn-sm" onclick="aggiungiAlCarrello('Cd', 2024, 'Ex Angelo', 'I Nomi Del Diavolo', 'Kid Yugi, Sfera', 'Hip Hop', 5)">Aggiungi al carrello</button>
+      </div>
+    </div>
+
+
+    <div class="card">
+      <img src="https://i.discogs.com/OhdmICvVfUkpUOzs--QzTGRrV3Qx7ZikdEms5NJQcnc/rs:fit/g:sm/q:90/h:600/w:595/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTI5OTg2/MTExLTE3MTAwMDk4/ODItNjY0My5qcGVn.jpeg" class="card-img-top" alt="Copertina dell'album">
+      <div class="card-body">
+        <h5 class="card-title"><strong>SINTETICO</strong></h5>
+        <p class="card-text"><strong>Tipo:</strong> CD</p>
+        <p class="card-text"><strong>Anno:</strong> 2024</p>
+        <p class="card-text"><strong>Artista:</strong> Kid Yugi, Night Skinny, Tony Boy</p>
+        <p class="card-text"><strong>Brano:</strong> Singolo</p>
+        <p class="card-text"><strong>Genere:</strong> Hip Hop</p>
+        <p class="card-text"><strong>Prezzo:</strong> $5</p>
+        <p class="card-text"><strong>Album:</strong> I Nomi Del Diavolo</p>
+        <button class="btn btn-primary btn-sm" onclick="aggiungiAlCarrello('Cd', 2024, 'Sintetico', 'I Nomi Del Diavolo', 'Kid Yugi, Night Skinny, Tony Boy', 'Hip Hop', 5)">Aggiungi al carrello</button>
+      </div>
+    </div>
+
+
+    <h6><strong>ALTRO- KID YUGI</strong></h6>
+    <div class="card">
+      <img src="https://i.discogs.com/K3eBJxeoTieENf7dfLkfxIKVzEduG_lpglnDiyD_DNg/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTI4NTcw/NTQ5LTE3MDI5NTc3/NjEtNTQzNC5qcGVn.jpeg" class="card-img-top" alt="Copertina dell'album">
+      <div class="card-body">
+        <h5 class="card-title"><strong>PARADISO ARTIFICIALE</strong></h5>
+        <p class="card-text"><strong>Tipo:</strong> CD</p>
+        <p class="card-text"><strong>Anno:</strong> 2023</p>
+        <p class="card-text"><strong>Artista:</strong> Tedua, Baby Gang, Kid Yugi</p>
+        <p class="card-text"><strong>Brano:</strong> Singolo</p>
+        <p class="card-text"><strong>Genere:</strong> Hip Hop</p>
+        <p class="card-text"><strong>Prezzo:</strong> $5</p>
+        <p class="card-text"><strong>Album:</strong> La Divina Commedia</p>
+        <button class="btn btn-primary btn-sm" onclick="aggiungiAlCarrello('Cd', 2023, 'Paradiso Artificiale', 'La Divina Commedia', 'Tedua, Baby Gang, Kid Yugi', 'Hip Hop', 5)">Aggiungi al carrello</button>
+      </div>
+    </div>
+
+
+    <h4><strong>TONY EFFE</strong></h4>
+    <h6><strong>ICON</strong></h6>
+    <div class="card">
+      <img src="https://www.lafeltrinelli.it/images/0602465264265_0_464_0_75.jpg" class="card-img-top" alt="Copertina dell'album">
+      <div class="card-body">
+        <h5 class="card-title"><strong>DOPO LE 4 </strong></h5>
+        <p class="card-text"><strong>Tipo:</strong> CD</p>
+        <p class="card-text"><strong>Anno:</strong> 2024</p>
+        <p class="card-text"><strong>Artista:</strong> Tony Effe, Tedua, Bresh </p>
+        <p class="card-text"><strong>Brano:</strong> Singolo</p>
+        <p class="card-text"><strong>Genere:</strong> Hip Hop</p>
+        <p class="card-text"><strong>Prezzo:</strong> $5</p>
+        <p class="card-text"><strong>Album:</strong> Icon</p>
+        <button class="btn btn-primary btn-sm" onclick="aggiungiAlCarrello('Cd', 2024, 'Dopo Le 4', 'Icon', 'Tony Effe, Tedua, Bresh', 'Hip Hop', 5)">Aggiungi al carrello</button>
+      </div>
+    </div>
+
+
+    <div class="card">
+      <img src="https://www.lafeltrinelli.it/images/0602465264265_0_464_0_75.jpg" class="card-img-top" alt="Copertina dell'album">
+      <div class="card-body">
+        <h5 class="card-title"><strong>PILLOLE</strong></h5>
+        <p class="card-text"><strong>Tipo:</strong> CD</p>
+        <p class="card-text"><strong>Anno:</strong> 2024</p>
+        <p class="card-text"><strong>Artista:</strong> Tony Effe, Sfera, Geolier</p>
+        <p class="card-text"><strong>Brano:</strong> Singolo</p>
+        <p class="card-text"><strong>Genere:</strong> Hip Hop</p>
+        <p class="card-text"><strong>Prezzo:</strong> $5</p>
+        <p class="card-text"><strong>Album:</strong> Icon</p>
+        <button class="btn btn-primary btn-sm" onclick="aggiungiAlCarrello('Cd', 2024, 'Pillole', 'Icon', 'Tony Effe, Sfera, Geolier', 'Hip Hop', 5)">Aggiungi al carrello</button>
+      </div>
+    </div>
+
+
+    <div class="card">
+      <img src="https://www.lafeltrinelli.it/images/0602465264265_0_464_0_75.jpg" class="card-img-top" alt="Copertina dell'album">
+      <div class="card-body">
+        <h5 class="card-title"><strong>MIU MIU</strong></h5>
+        <p class="card-text"><strong>Tipo:</strong> CD</p>
+        <p class="card-text"><strong>Anno:</strong> 2024</p>
+        <p class="card-text"><strong>Artista:</strong> Tony Effe</p>
+        <p class="card-text"><strong>Brano:</strong> Singolo</p>
+        <p class="card-text"><strong>Genere:</strong> Hip Hop</p>
+        <p class="card-text"><strong>Prezzo:</strong> $5</p>
+        <p class="card-text"><strong>Album:</strong> Icon</p>
+        <button class="btn btn-primary btn-sm" onclick="aggiungiAlCarrello('Cd', 2024, 'Miu Miu', 'Icon', 'Tony Effe, Sfera, Geolier', 'Hip Hop', 5)">Aggiungi al carrello</button>
+      </div>
+    </div>
+
+
+    <div class="card">
+      <img src="https://www.lafeltrinelli.it/images/0602465264265_0_464_0_75.jpg" class="card-img-top" alt="Copertina dell'album">
+      <div class="card-body">
+        <h5 class="card-title"><strong>ICON</strong></h5>
+        <p class="card-text"><strong>Tipo:</strong> CD</p>
+        <p class="card-text"><strong>Anno:</strong> 2024</p>
+        <p class="card-text"><strong>Artista:</strong> Tony Effe</p>
+        <p class="card-text"><strong>Brano:</strong> Singolo</p>
+        <p class="card-text"><strong>Genere:</strong> Hip Hop</p>
+        <p class="card-text"><strong>Prezzo:</strong> $5</p>
+        <p class="card-text"><strong>Album:</strong> Icon</p>
+        <button class="btn btn-primary btn-sm" onclick="aggiungiAlCarrello('Cd', 2024, 'Icon', 'Icon', 'Tony Effe, Sfera, Geolier', 'Hip Hop', 5)">Aggiungi al carrello</button>
+      </div>
+    </div>
+
+    <h6><strong>ALTRO- TONY EFFE</strong></h6>
+    <div class="card">
+      <img src="https://m.media-amazon.com/images/I/51RE6aWvlmL._UXNaN_FMjpg_QL85_.jpg" class="card-img-top" alt="Copertina dell'album">
+      <div class="card-body">
+        <h5 class="card-title"><strong>NO LOVE</strong></h5>
+        <p class="card-text"><strong>Tipo:</strong> CD</p>
+        <p class="card-text"><strong>Anno:</strong> 2023</p>
+        <p class="card-text"><strong>Artista:</strong> Pyrex,Tony Effe</p>
+        <p class="card-text"><strong>Brano:</strong> Singolo</p>
+        <p class="card-text"><strong>Genere:</strong> Hip Hop</p>
+        <p class="card-text"><strong>Prezzo:</strong> $5</p>
+        <p class="card-text"><strong>Album:</strong> Love Is War</p>
+        <button class="btn btn-primary btn-sm" onclick="aggiungiAlCarrello('Cd', 2024, 'No Love', 'Love Is War', 'Pyrex,Tony Effe', 'Hip Hop', 5)">Aggiungi al carrello</button>
+      </div>
+    </div>
+
+
+    <h4><strong>ARTIE5IVE</strong></h4>
+    <h6><strong>ASPETTANDO LA BELLA VITA</strong></h6>
+    <div class="card">
+      <img src="https://m.media-amazon.com/images/I/41UQLdFPD0L._UXNaN_FMjpg_QL85_.jpg" class="card-img-top" alt="Copertina dell'album">
+      <div class="card-body">
+        <h5 class="card-title"><strong>Anelli e Collane </strong></h5>
+        <p class="card-text"><strong>Tipo:</strong> CD</p>
+        <p class="card-text"><strong>Anno:</strong> 2024</p>
+        <p class="card-text"><strong>Artista:</strong> Artie 5ive, Anna </p>
+        <p class="card-text"><strong>Brano:</strong> Singolo</p>
+        <p class="card-text"><strong>Genere:</strong> Hip Hop</p>
+        <p class="card-text"><strong>Prezzo:</strong> $5</p>
+        <p class="card-text"><strong>Album:</strong> Aspettando La Bella Vita</p>
+        <button class="btn btn-primary btn-sm" onclick="aggiungiAlCarrello('Cd', 2024, 'Anelli e Collane', 'Aspettando La Bella Vita', 'Artie 5ive, Anna', 'Hip Hop', 5)">Aggiungi al carrello</button>
+      </div>
+    </div>
+
+    <h6><strong>00</strong></h6>
+    <div class="card">
+      <img src="https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/aa/3b/83/aa3b83d3-e779-5211-6823-b9502e41b9a1/5021732271686.jpg/1200x1200bf-60.jpg" class="card-img-top" alt="Copertina dell'album">
+      <div class="card-body">
+        <h5 class="card-title"><strong>00</strong></h5>
+        <p class="card-text"><strong>Tipo:</strong> CD</p>
+        <p class="card-text"><strong>Anno:</strong> 2024</p>
+        <p class="card-text"><strong>Artista:</strong> Artie 5ive</p>
+        <p class="card-text"><strong>Brano:</strong> Singolo</p>
+        <p class="card-text"><strong>Genere:</strong> Hip Hop</p>
+        <p class="card-text"><strong>Prezzo:</strong> $5</p>
+        <p class="card-text"><strong>Album:</strong> 00</p>
+        <button class="btn btn-primary btn-sm" onclick="aggiungiAlCarrello('Cd', 2024, '00', '00', 'Artie 5ive', 'Hip Hop', 5)">Aggiungi al carrello</button>
+      </div>
+    </div>
+
+    
+    <h6><strong>ALTRO- ARTIE 5IVE</strong></h6>
+    <div class="card">
+      <img src="https://images.genius.com/62851b9a50d6f525d4f47482edee59f3.1000x1000x1.jpg" class="card-img-top" alt="Copertina dell'album">
+      <div class="card-body">
+        <h5 class="card-title"><strong>LE BAMBINE FANNO OH</strong></h5>
+        <p class="card-text"><strong>Tipo:</strong> CD</p>
+        <p class="card-text"><strong>Anno:</strong> 2023</p>
+        <p class="card-text"><strong>Artista:</strong> Sadturs, Nerissima Serpe, Anna, Papa V, Artie 5ive</p>
+        <p class="card-text"><strong>Brano:</strong> Singolo</p>
+        <p class="card-text"><strong>Genere:</strong> Hip Hop</p>
+        <p class="card-text"><strong>Prezzo:</strong> $5</p>
+        <p class="card-text"><strong>Album:</strong> No Regular Music</p>
+        <button class="btn btn-primary btn-sm" onclick="aggiungiAlCarrello('Cd', 2024, 'Le Bambine Fanno Oh', 'No Regular Music', 'Sadturs, Nerissima Serpe, Anna, Papa V, Artie 5ive', 'Hip Hop', 5)">Aggiungi al carrello</button>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -275,8 +1238,37 @@
     }
   </script>
 
+
+<footer class="footer">
+  &copy; 2024 Music Shop. Tutti i diritti riservati.
+</footer>
+
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var searchForm = document.getElementById("searchForm");
+        var searchInput = document.getElementById("searchInput");
+        
+        searchForm.addEventListener("submit", function(event) {
+            event.preventDefault(); // Previeni il comportamento predefinito del submit del form
+            
+            var searchTerm = searchInput.value.trim().toLowerCase();
+            var cards = document.querySelectorAll(".card");
+
+            cards.forEach(function(card) {
+                var cardText = card.innerText.toLowerCase();
+                if (cardText.includes(searchTerm)) {
+                    card.style.display = "block"; // Mostra la carta se contiene la stringa di ricerca
+                } else {
+                    card.style.display = "none"; // Nascondi la carta altrimenti
+                }
+            });
+        });
+    });
+  </script>
 </body>
 </html>

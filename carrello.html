@@ -16,8 +16,16 @@
       background-color: #333;
       color: #fff;
     }
-    .navbar-brand, .nav-link {
+    .navbar-brand {
       color: #fff !important;
+      margin-right: auto; /* Sposta "Music Shop" tutto a sinistra */
+    }
+    .nav-link {
+      color: #fff !important;
+      margin-left: auto; /* Sposta gli elementi del menu a sinistra */
+    }
+    .navbar .form-inline {
+      justify-content: flex-end; /* Sposta la barra di ricerca a destra */
     }
     .container {
       max-width: 1200px;
@@ -45,32 +53,55 @@
     hr {
       margin: 0 0 20px;
     }
+    .carousel-item img {
+      max-height: 600px; /* Imposta l'altezza massima delle immagini */
+      width: auto; /* Per mantenere proporzioni */
+      margin: 0 auto; /* Per centrare le immagini */
+    }
+    .carousel-caption {
+      color: white;
+    }
+    .footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 10px 0;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+    .remove-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background-color: red;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 25px;
+      height: 25px;
+      font-size: 16px;
+      text-align: center;
+      line-height: 25px;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
-
-
-
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
-      <div>
-        <h2>Music Shop</h2>
-      </div>
+      <a class="navbar-brand" href="#">Music Shop</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
-          
-      
-          
           <li class="nav-item">
             <a class="nav-link" href="/">HOME🏡</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/bestseller">BESTSELLER⭐</a>
           </li>
-
           <li class="nav-item">
             <a class="nav-link" href="/carrello">CARRELLO🛒</a>
           </li>
@@ -83,8 +114,12 @@
           <li class="nav-item">
             <a class="nav-link" href="/contatti">CONTATTI📱</a>
           </li>
-          
         </ul>
+        <!-- Barra di ricerca -->
+        <form id="searchForm" class="form-inline my-2 my-lg-0">
+          <input id="searchInput" class="form-control mr-sm-2 ml-auto" type="search" placeholder="Cerca" aria-label="Cerca">
+          <button class="btn btn-outline-success my-2 my-sm-0 mr-2" type="submit">Cerca</button>
+        </form>
       </div>
     </div>
   </nav>
@@ -98,55 +133,84 @@
   </div>
 
   <script>
-    // Funzione per ottenere i dati del carrello dal localStorage
     function getCartData() {
       return JSON.parse(localStorage.getItem('carrello')) || [];
     }
 
     // Funzione per visualizzare i prodotti nel carrello
     function displayCart() {
-        var cart = getCartData();
-        var carrelloDiv = document.getElementById('carrello');
-        // Svuota il contenuto del div del carrello
-        carrelloDiv.innerHTML = '';
-        // Aggiungi i prodotti al carrello
-        cart.forEach(function(itemString) {
-          var item = JSON.parse(itemString);
-          var cardDiv = document.createElement('div');
-          cardDiv.className = 'card mb-2 large-card';
+      var cart = getCartData();
+      var carrelloDiv = document.getElementById('carrello');
+      carrelloDiv.innerHTML = '';
+      cart.forEach(function(itemString, index) {
+        var item = JSON.parse(itemString);
+        var cardDiv = document.createElement('div');
+        cardDiv.className = 'card mb-2 large-card';
+        cardDiv.innerHTML = `
+          <div class="card-body">
+            <button class="remove-btn" onclick="removeFromCart(${index})">x</button>
+            <p class="card-text">Tipo: ${item.tipo}</p>
+            <p class="card-text">Anno: ${item.anno}</p>
+            <p class="card-text">Album: ${item.album}</p>
+            <p class="card-text">Brani: ${item.brani}</p>
+            <p class="card-text">Artista: ${item.artista}</p>
+            <p class="card-text">Genere: ${item.genere}</p>
+            <p class="card-text">Prezzo: $${item.prezzo}</p>
+            <p class="card-text">Copertina: <img src="${item.copertina}" alt="Copertina dell'album"></p>
+          </div>
+        `;
+        carrelloDiv.appendChild(cardDiv);
+      });
+    }
 
-
-
-          cardDiv.innerHTML = `
-            <div class="card-body">
-              <p class="card-text">Tipo: ${item.tipo}</p>
-              <p class="card-text">Anno: ${item.anno}</p>
-              <p class="card-text">Album: ${item.album}</p>
-              <p class="card-text">Brani: ${item.brani}</p>
-              <p class="card-text">Artista: ${item.artista}</p>
-              <p class="card-text">Genere: ${item.genere}</p>
-              <p class="card-text">Prezzo: $${item.prezzo}</p>
-              <p class="card-text">Copertina: <img src="${item.copertina}" alt="Copertina dell'album"></p>
-
-            </div>
-          `;
-          carrelloDiv.appendChild(cardDiv);
-        });
-      }
-
+    // Funzione per rimuovere un singolo prodotto dal carrello
+    function removeFromCart(index) {
+      var cart = getCartData();
+      cart.splice(index, 1);
+      localStorage.setItem('carrello', JSON.stringify(cart));
+      displayCart();
+    }
 
     // Funzione per svuotare il carrello
     function svuotaCarrello() {
       localStorage.removeItem('carrello');
-      displayCart(); // Aggiorna la visualizzazione del carrello dopo averlo svuotato
+      displayCart();
     }
 
     // Chiama displayCart() all'avvio per visualizzare il carrello corrente
     displayCart();
   </script>
 
+<footer class="footer">
+  &copy; 2024 Music Shop. Tutti i diritti riservati.
+</footer>
+
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var searchForm = document.getElementById("searchForm");
+        var searchInput = document.getElementById("searchInput");
+        
+        searchForm.addEventListener("submit", function(event) {
+            event.preventDefault(); // Previeni il comportamento predefinito del submit del form
+            
+            var searchTerm = searchInput.value.trim().toLowerCase();
+            var cards = document.querySelectorAll(".card");
+
+            cards.forEach(function(card) {
+                var cardText = card.innerText.toLowerCase();
+                if (cardText.includes(searchTerm)) {
+                    card.style.display = "block"; // Mostra la carta se contiene la stringa di ricerca
+                } else {
+                    card.style.display = "none"; // Nascondi la carta altrimenti
+                }
+            });
+        });
+    });
+  </script>
 </body>
 </html>

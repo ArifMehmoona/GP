@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contatti📱</title>
+  <title>BESTSELLER⭐</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <style>
     body {
@@ -16,8 +16,16 @@
       background-color: #333;
       color: #fff;
     }
-    .navbar-brand, .nav-link {
+    .navbar-brand {
       color: #fff !important;
+      margin-right: auto; /* Sposta "Music Shop" tutto a sinistra */
+    }
+    .nav-link {
+      color: #fff !important;
+      margin-left: auto; /* Sposta gli elementi del menu a sinistra */
+    }
+    .navbar .form-inline {
+      justify-content: flex-end; /* Sposta la barra di ricerca a destra */
     }
     .container {
       max-width: 1200px;
@@ -45,29 +53,40 @@
     hr {
       margin: 0 0 20px;
     }
+    .carousel-item img {
+      max-height: 600px; /* Imposta l'altezza massima delle immagini */
+      width: auto; /* Per mantenere proporzioni */
+      margin: 0 auto; /* Per centrare le immagini */
+    }
+    .carousel-caption {
+      color: white;
+    }
+    .footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 10px 0;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
   </style>
 </head>
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
-      <div>
-        <h2>Music Shop</h2>
-      </div>
+      <a class="navbar-brand" href="#">Music Shop</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
-          
-      
-          
           <li class="nav-item">
             <a class="nav-link" href="/">HOME🏡</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/bestseller">BESTSELLER⭐</a>
           </li>
-
           <li class="nav-item">
             <a class="nav-link" href="/carrello">CARRELLO🛒</a>
           </li>
@@ -80,24 +99,37 @@
           <li class="nav-item">
             <a class="nav-link" href="/contatti">CONTATTI📱</a>
           </li>
-          
         </ul>
+        <!-- Barra di ricerca -->
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2 ml-auto" type="search" placeholder="Cerca" aria-label="Cerca">
+          <button class="btn btn-outline-success my-2 my-sm-0 mr-2" type="submit">Cerca</button> <!-- Aggiunto mr-2 per uno spazio a destra -->
+        </form>
       </div>
     </div>
   </nav>
 
   <section>
-    <div class="container">
+    <div class="container mt-5">
       <div class="card">
         <h2>Contatti</h2>
         <p>Per qualsiasi domanda o richiesta, non esitare a contattarci tramite i seguenti metodi:</p>
         <ul>
-          <li>Email: info@musicshop.com</li>
-          <li>Telefono: +39 0123 456789</li>
-          <li>Indirizzo: Via didove citroviamo, 11 - 20151 Milano</li>
+          <li><i class="fas fa-envelope"></i>Email: <a href="mailto:info@musicshop.com">info@musicshop.com</a></li>
+          <li><i class="fas fa-phone"></i>Telefono: <a href="tel:+390123456789">+39 0123 456789</a></li>
+          <li><i class="fas fa-map-marker-alt"></i>Indirizzo: Via didove citroviamo, 11 - 20151 Milano</li>
         </ul>
       </div>
     </div>
   </section>
 
   <footer class="footer">
+    &copy; 2024 Music Shop. Tutti i diritti riservati.
+  </footer>
+
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
