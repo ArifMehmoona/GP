@@ -130,6 +130,7 @@
       <!-- Qui verranno visualizzati i prodotti nel carrello -->
     </div>
     <button class="btn btn-danger" onclick="svuotaCarrello()">Svuota carrello</button>
+    <button class="btn btn-primary" onclick="vaiAlPagamento()">Vai Al Pagamento</button>
   </div>
 
   <script>
@@ -177,18 +178,22 @@
       displayCart();
     }
 
+    // Funzione per reindirizzare alla pagina di pagamento
+    function vaiAlPagamento() {
+      window.location.href = '/pagamento';
+    }
+
     // Chiama displayCart() all'avvio per visualizzare il carrello corrente
     displayCart();
   </script>
 
-<footer class="footer">
-  &copy; 2024 Music Shop. Tutti i diritti riservati.
-</footer>
+  <footer class="footer">
+    &copy; 2024 Music Shop. Tutti i diritti riservati.
+  </footer>
 
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
 
   <script>
     document.addEventListener("DOMContentLoaded", function() {

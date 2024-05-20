@@ -17,6 +17,10 @@ app.get('/cd', function (req, res) {
 
 });
 
+app.get('/pagamento', function(req, res){
+    res.sendFile(path.join(__dirname, 'pagamento.html'));
+});
+
 app.get('/home', function (req, res) {
     res.sendFile(path.join(__dirname, 'home.html'));
 });
@@ -33,14 +37,8 @@ app.get('/contatti', function(req, res){
     res.sendFile(path.join(__dirname, 'contatti.html'));
 });
 
-
-app.use(express.static(path.join(__dirname, 'public')));
-
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
-});
-
-
-app.listen(3000, () => {
-  console.log('Example app listening on port 3000!');
+// Cambia la porta da 3000 a 3001
+const PORT = 3001;
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
 });

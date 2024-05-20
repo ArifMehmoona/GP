@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BESTSELLER⭐</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+    nav {
+      background-color: #333;
+      color: #fff;
+    }
+    .navbar-brand {
+      color: #fff !important;
+      margin-right: auto; /* Sposta "Music Shop" tutto a sinistra */
+    }
+    .nav-link {
+      color: #fff !important;
+      margin-left: auto; /* Sposta gli elementi del menu a sinistra */
+    }
+    .navbar .form-inline {
+      justify-content: flex-end; /* Sposta la barra di ricerca a destra */
+    }
+    .container {
+      max-width: 1200px;
+      margin: 20px auto;
+      padding: 0 15px;
+    }
+    .card {
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      margin-bottom: 20px;
+      display: inline-block;
+      vertical-align: top;
+      width: calc(33.33% - 20px); /* Larghezza del 33.33% con spazio tra le carte */
+      margin-right: 20px; /* Spazio tra le carte */
+      box-sizing: border-box; /* Calcola la larghezza includendo il padding e il bordo */
+    }
+    .card:nth-child(3n) {
+      margin-right: 0; /* Rimuove il margine destro dalla terza carta in ogni riga */
+    }
+    .card h2 {
+      margin-top: 0;
+    }
+    hr {
+      margin: 0 0 20px;
+    }
+    .carousel-item img {
+      max-height: 600px; /* Imposta l'altezza massima delle immagini */
+      width: auto; /* Per mantenere proporzioni */
+      margin: 0 auto; /* Per centrare le immagini */
+    }
+    .carousel-caption {
+      color: white;
+    }
+    .footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 10px 0;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">Music Shop</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/">HOME🏡</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/bestseller">BESTSELLER⭐</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/carrello">CARRELLO🛒</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/cd">CD💿</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/vinili">VINILI💜</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/contatti">CONTATTI📱</a>
+          </li>
+        </ul>
+        <!-- Barra di ricerca -->
+        <form id="searchForm" class="form-inline my-2 my-lg-0">
+          <input id="searchInput" class="form-control mr-sm-2 ml-auto" type="search" placeholder="Cerca" aria-label="Cerca">
+          <button class="btn btn-outline-success my-2 my-sm-0 mr-2" type="submit">Cerca</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <h2 class="text-center">Pagamento Online</h2>
+    <form id="paymentForm">
+      <div class="form-group">
+        <label for="cardName">Nome del Titolare</label>
+        <input type="text" class="form-control" id="cardName" placeholder="Nome del Titolare" required>
+      </div>
+      <div class="form-group">
+        <label for="cardNumber">Numero della Carta</label>
+        <input type="text" class="form-control" id="cardNumber" placeholder="Numero della Carta (16 cifre)" required>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="expiryDate">Data di Scadenza (MM/AA)</label>
+          <input type="text" class="form-control" id="expiryDate" placeholder="MM/AA" required>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="cvv">CVV</label>
+          <input type="text" class="form-control" id="cvv" placeholder="CVV (3 cifre)" required>
+        </div>
+      </div>
+      <!-- Aggiungiamo i campi per l'indirizzo di consegna -->
+      <div class="form-group">
+        <label for="via">Via</label>
+        <input type="text" class="form-control" id="via" placeholder="Via" required>
+      </div>
+      <div class="form-group">
+        <label for="citta">Città</label>
+        <input type="text" class="form-control" id="citta" placeholder="Città" required>
+      </div>
+      <div class="form-group">
+        <label for="paese">Paese</label>
+        <input type="text" class="form-control" id="paese" placeholder="Paese" required>
+      </div>
+      <div class="form-group">
+        <label for="numeroCivico">Numero Civico</label>
+        <input type="text" class="form-control" id="numeroCivico" placeholder="Numero Civico" required>
+      </div>
+      <div class="form-group">
+        <label for="cap">CAP</label>
+        <input type="text" class="form-control" id="cap" placeholder="CAP" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Paga Ora</button>
+    </form>
+  </div>
+
+  <!-- Script JavaScript -->
+  <script>
+    document.getElementById('paymentForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      // Controlla che il nome del titolare non contenga numeri
+      var cardName = document.getElementById('cardName').value.trim();
+      if (/\d/.test(cardName)) {
+        alert('Il nome del titolare non può contenere numeri.');
+        return;
+      }
+
+      // Controlla che il numero della carta sia composto da 16 cifre
+      var cardNumber = document.getElementById('cardNumber').value.trim();
+      if (!/^\d{16}$/.test(cardNumber)) {
+        alert('Il numero della carta deve contenere 16 cifre.');
+        return;
+      }
+
+      // Controlla che la data di scadenza sia nel formato MM/AA e valida
+      var expiryDate = document.getElementById('expiryDate').value.trim();
+      if (!/^\d{2}\/\d{2}$/.test(expiryDate)) {
+        alert('Inserisci la data di scadenza nel formato MM/AA.');
+        return;
+      }
+      var today = new Date();
+      var currentMonth = today.getMonth() + 1; // Il mese corrente è indicizzato da 0
+      var currentYear = today.getFullYear() % 100; // Ottieni solo gli ultimi due cifre dell'anno
+      var inputMonth = parseInt(expiryDate.slice(0, 2));
+      var inputYear = parseInt(expiryDate.slice(3));
+      if (inputYear < currentYear || (inputYear === currentYear && inputMonth < currentMonth)) {
+        alert('La carta è scaduta.');
+        return;
+      }
+
+      // Controlla che il CVV sia composto da 3 cifre
+      var cvv = document.getElementById('cvv').value.trim();
+      if (!/^\d{3}$/.test(cvv)) {
+        alert('Il CVV deve contenere 3 cifre.');
+        return;
+      }
+
+      // Controlla che via, città e paese non contengano numeri
+      var via = document.getElementById('via').value.trim();
+        if (!/^[a-zA-Z]+$/.test(via)) {
+        alert('La via può contenere solo lettere.');
+        return;
+      }
+      var citta = document.getElementById('citta').value.trim();
+      var paese = document.getElementById('paese').value.trim();
+      if (/\d/.test(via) || /\d/.test(citta) || /\d/.test(paese)) {
+        alert('Via, città e paese non possono contenere numeri.');
+        return;
+      }
+
+      // Controlla che il numero civico e il CAP siano numerici
+      var numeroCivico = document.getElementById('numeroCivico').value.trim();
+      var cap = document.getElementById('cap').value.trim();
+      if (isNaN(numeroCivico) || isNaN(cap)) {
+        alert('Il numero civico e il CAP devono essere numerici.');
+        return;
+      }
+
+      // Se tutti i controlli passano, invia il modulo
+      alert('Pagamento inviato!');
+      // Logica per il pagamento effettivo va qui
+    });
+
+    // Aggiungi automaticamente lo slash nel campo MM/AA
+    document.getElementById('expiryDate').addEventListener('input', function(event) {
+      var input = event.target.value;
+      if (input.length === 2 && event.data !== '/') {
+        event.target.value = input + '/';
+      }
+    });
+  </script>
+
+  <!-- Librerie JavaScript di Bootstrap -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
