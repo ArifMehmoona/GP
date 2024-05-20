@@ -137,8 +137,7 @@
     function getCartData() {
       return JSON.parse(localStorage.getItem('carrello')) || [];
     }
-
-    // Funzione per visualizzare i prodotti nel carrello
+  
     function displayCart() {
       var cart = getCartData();
       var carrelloDiv = document.getElementById('carrello');
@@ -163,27 +162,32 @@
         carrelloDiv.appendChild(cardDiv);
       });
     }
-
-    // Funzione per rimuovere un singolo prodotto dal carrello
+  
     function removeFromCart(index) {
       var cart = getCartData();
       cart.splice(index, 1);
       localStorage.setItem('carrello', JSON.stringify(cart));
       displayCart();
     }
-
-    // Funzione per svuotare il carrello
+  
     function svuotaCarrello() {
       localStorage.removeItem('carrello');
       displayCart();
     }
-
-    // Funzione per reindirizzare alla pagina di pagamento
-    function vaiAlPagamento() {
-      window.location.href = '/pagamento';
+  
+    function calculateTotal() {
+      var cart = getCartData();
+      return cart.reduce(function(total, itemString) {
+        var item = JSON.parse(itemString);
+        return total + parseFloat(item.prezzo);
+      }, 0).toFixed(2);
     }
-
-    // Chiama displayCart() all'avvio per visualizzare il carrello corrente
+  
+    function vaiAlPagamento() {
+      var total = calculateTotal();
+      window.location.href = `/pagamento?total=${total}`;
+    }
+  
     displayCart();
   </script>
 
